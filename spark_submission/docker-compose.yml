@@ -1,0 +1,33 @@
+name: spark-bai01
+x-common: &common
+  image: apache/spark:3.5.1
+  user: "0:0"
+  volumes:
+    - ./apps:/opt/spark-apps:ro
+    - ./data:/data:ro
+    - ./results:/results
+    - ./notebooks:/notebooks
+    - ./evidence:/evidence
+  environment:
+    PYSPARK_PYTHON: python3
+services:
+  spark-master:
+    <<: *common
+    container_name: spark-master
+    hostname: spark-master
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.master.Master", "--host", "spark-master", "--port", "7077", "--webui-port", "8080"]
+    ports: ["127.0.0.1:8080:8080", "127.0.0.1:7077:7077"]
+  spark-worker-1:
+    <<: *common
+    container_name: spark-worker-1
+    hostname: spark-worker-1
+    depends_on: [spark-master]
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--host", "spark-worker-1", "--cores", "1", "--memory", "1g", "--webui-port", "8081", "spark://spark-master:7077"]
+    ports: ["127.0.0.1:8081:8081"]
+  spark-worker-2:
+    <<: *common
+    container_name: spark-worker-2
+    hostname: spark-worker-2
+    depends_on: [spark-master]
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--host", "spark-worker-2", "--cores", "1", "--memory", "1g", "--webui-port", "8081", "spark://spark-master:7077"]
+    ports: ["127.0.0.1:8082:8081"]

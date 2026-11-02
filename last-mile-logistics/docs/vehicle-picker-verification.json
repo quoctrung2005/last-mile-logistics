@@ -1,0 +1,43 @@
+{
+  "checks": [
+    "Real busy shipper lists unavailable vehicles and explains why none can be assigned",
+    "The shipper's own current vehicle is visible but cannot be selected",
+    "Real SQL scope excludes assigned vehicles from other branches and rejects a stale branch context",
+    "Assignment lookup validates target shipper, branch context and live management grants",
+    "Each catalog type filters on the server before pagination; eligible count remains unfiltered",
+    "API searches code/plate and distinguishes an unmatched keyword from an empty eligible pool",
+    "Opening picker automatically loads page 1 with an empty keyword",
+    "Automatic request carries the target shipper's actual branch and unavailable-row contract",
+    "Vietnamese catalog labels and explicit plate/code search are displayed",
+    "Picker filters Xe máy",
+    "Picker filters Xe tải",
+    "Picker filters Xe tải 1 tấn",
+    "Selected vehicle stays visible and selected across server pages",
+    "Clearing filters resets page but preserves the chosen vehicle",
+    "Selecting a free vehicle never enables an unavailable vehicle's button",
+    "Change choice clears the previous selection",
+    "Picker searches vehicle code",
+    "Picker searches plate",
+    "Unmatched filters show guidance rather than an empty-pool message",
+    "Zero scoped vehicles has a separate state (controlled empty response)",
+    "Load failure is distinct and offers retry",
+    "Retry reloads the real eligible API after a controlled 500",
+    "A stale branch response clears and blocks the previous choice (controlled 409)",
+    "A list response arriving during save reloads after a 400, preserving choice and notes",
+    "Picker fits 1440px without dialog horizontal overflow",
+    "Picker fits 390px without dialog horizontal overflow",
+    "A vehicle claimed after selection is rejected by the save transaction; draft notes remain",
+    "Opening a different shipper/branch starts a new selection scope",
+    "Vehicle-page entry verifies and preselects its vehicle while still loading an unfiltered list"
+  ],
+  "count": 29,
+  "realSql": true,
+  "operationalWrites": false,
+  "controlledResponses": [
+    "zero scoped vehicles",
+    "one list 500",
+    "stale branch list 409",
+    "one delayed list with save 400"
+  ],
+  "scope": "Vehicles have no owning branch; assigned vehicles in target branch plus free ADMIN pool; branch and availability rechecked from database"
+}

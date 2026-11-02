@@ -1,0 +1,8 @@
+order_id,customer,product,quantity,price
+1,An,Laptop,1,15000000
+2,Binh,Mouse,5,200000
+3,Chi,Keyboard,2,500000
+4,An,Monitor,2,3000000
+5,Dung,Laptop,1,15000000
+6,Binh,Monitor,1,3000000
+7,Chi,Mouse,3,200000

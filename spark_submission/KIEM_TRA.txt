@@ -1,0 +1,1 @@
+Đã kiểm tra cú pháp các file Python; cấu trúc JSON notebook; đủ 5 tài liệu; dữ liệu cửa hàng 125 dòng; tính đối chiếu các kết quả bằng Python thuần. Chưa kiểm thử runtime Spark/Scala/Compose vì thiếu Docker. Không có ảnh thực chạy và số đo benchmark.

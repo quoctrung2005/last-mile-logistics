@@ -1,0 +1,21 @@
+{
+  "phase": "pricing",
+  "mode": "Isolated LocalDB schema/seed + real ASP.NET/proxy/Edge; seeded actors use test JWT with independent random signing key.",
+  "checks": [
+    "Fee rule save checks management permission, negative values, effective interval and overlapping active ranges",
+    "Real quote uses backend formula, numeric-string precision, and area priority over global rule",
+    "Backend state/scope filters and empty arrays support real pagination",
+    "Exact decimal fee fields preserve values beyond JavaScript safe cents",
+    "Large fee uses exact decimal representation",
+    "Edit preserves exact fee input",
+    "Browser edit round-trips large decimal fee exactly",
+    "Browser saves fee rule through real API",
+    "Quote result shows actual API price and makes no order POST",
+    "pricing viewport 1440",
+    "pricing viewport 390",
+    "Quote/save do not change existing order data or stored fees",
+    "No JavaScript errors"
+  ],
+  "errors": [],
+  "operationalWrites": false
+}

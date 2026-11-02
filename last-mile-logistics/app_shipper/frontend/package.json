@@ -1,0 +1,11 @@
+{
+  "name": "last-mile-logistics-frontend",
+  "private": true,
+  "scripts": {
+    "start": "node dev-server.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "test:sidebar-layout": "node tests/sidebar-layout-browser.cjs",
+    "test:accounts": "dotnet build ../backend/LastMile/LastMile.Api/LastMile.Api.csproj --no-restore --output tests/.artifacts/accounts/build && node tests/accounts-browser.cjs",
+    "test:admin": "dotnet build ../backend/LastMile/LastMile.Api/LastMile.Api.csproj --no-restore --output tests/.artifacts/admin/build && node tests/admin-browser.cjs roles && node tests/admin-browser.cjs catalogs && node tests/admin-browser.cjs pricing && node tests/admin-browser.cjs audit && node tests/admin-browser.cjs regression"
+  }
+}

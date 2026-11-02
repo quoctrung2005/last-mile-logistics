@@ -1,0 +1,127 @@
+{
+  "checks": 20,
+  "sql": "Real read-only LocalDB master queries, controlled UTC parameters",
+  "systemClockChanged": false,
+  "records": [
+    {
+      "instant": "2026-10-19T23:59:00\u002B07:00",
+      "today": "2026-10-19",
+      "expiry": "2026-10-19",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-19T23:59:00\u002B07:00",
+      "today": "2026-10-19",
+      "expiry": "2026-10-20",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-19T23:59:00\u002B07:00",
+      "today": "2026-10-19",
+      "expiry": "2028-02-29",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-19T23:59:00\u002B07:00",
+      "today": "2026-10-19",
+      "expiry": null,
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T00:00:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2026-10-19",
+      "expired": true
+    },
+    {
+      "instant": "2026-10-20T00:00:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2026-10-20",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T00:00:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2028-02-29",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T00:00:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": null,
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T06:59:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2026-10-19",
+      "expired": true
+    },
+    {
+      "instant": "2026-10-20T06:59:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2026-10-20",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T06:59:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2028-02-29",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T06:59:00\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": null,
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T23:59:59\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2026-10-19",
+      "expired": true
+    },
+    {
+      "instant": "2026-10-20T23:59:59\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2026-10-20",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T23:59:59\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": "2028-02-29",
+      "expired": false
+    },
+    {
+      "instant": "2026-10-20T23:59:59\u002B07:00",
+      "today": "2026-10-20",
+      "expiry": null,
+      "expired": false
+    },
+    {
+      "instant": "2028-03-01T00:00:00\u002B07:00",
+      "today": "2028-03-01",
+      "expiry": "2026-10-19",
+      "expired": true
+    },
+    {
+      "instant": "2028-03-01T00:00:00\u002B07:00",
+      "today": "2028-03-01",
+      "expiry": "2026-10-20",
+      "expired": true
+    },
+    {
+      "instant": "2028-03-01T00:00:00\u002B07:00",
+      "today": "2028-03-01",
+      "expiry": "2028-02-29",
+      "expired": true
+    },
+    {
+      "instant": "2028-03-01T00:00:00\u002B07:00",
+      "today": "2028-03-01",
+      "expiry": null,
+      "expired": false
+    }
+  ]
+}

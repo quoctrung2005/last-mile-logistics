@@ -1,0 +1,342 @@
+{
+  "mode": "Read-only Development configuration and real DispatchData.Options/live permission queries; no writes",
+  "server": "(localdb)\\MSSQLLocalDB",
+  "configurationSource": "JsonConfigurationProvider for \u0027appsettings.json\u0027 (Required)",
+  "checkedAt": "2026-10-19T08:32:20.8427165+00:00",
+  "schema": {
+    "databaseName": "QLGiaoHangChangCuoi",
+    "warehouseColumns": [
+      {
+        "name": "MaKho",
+        "type": "int"
+      },
+      {
+        "name": "KyHieuKho",
+        "type": "varchar"
+      },
+      {
+        "name": "TenKho",
+        "type": "nvarchar"
+      },
+      {
+        "name": "MaBuuCuc",
+        "type": "int"
+      },
+      {
+        "name": "DiaChi",
+        "type": "nvarchar"
+      },
+      {
+        "name": "DangHoatDong",
+        "type": "bit"
+      },
+      {
+        "name": "ThoiGianTao",
+        "type": "datetime2"
+      },
+      {
+        "name": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "name": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "name": "NguonToaDo",
+        "type": "nvarchar"
+      }
+    ],
+    "coordinateColumns": [
+      {
+        "schemaName": "dbo",
+        "objectName": "BangChungGiaoHang",
+        "columnName": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "BangChungGiaoHang",
+        "columnName": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "BuuCuc",
+        "columnName": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "BuuCuc",
+        "columnName": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "BuuCuc",
+        "columnName": "ToaDoDiaLy"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiaChiKhachHang",
+        "columnName": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiaChiKhachHang",
+        "columnName": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiaChiKhachHang",
+        "columnName": "ToaDoDiaLy"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiemDungTuyen",
+        "columnName": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiemDungTuyen",
+        "columnName": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiemDungTuyen",
+        "columnName": "ToaDoDiaLy"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiemGiaoNhan",
+        "columnName": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiemGiaoNhan",
+        "columnName": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "DiemGiaoNhan",
+        "columnName": "ToaDoDiaLy"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "Kho",
+        "columnName": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "Kho",
+        "columnName": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "Kho",
+        "columnName": "NguonToaDo",
+        "type": "nvarchar"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "LichSuViTriNhanVienGiaoHang",
+        "columnName": "ViDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "LichSuViTriNhanVienGiaoHang",
+        "columnName": "KinhDo",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "NhanVienGiaoHang",
+        "columnName": "ViDoHienTai",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "NhanVienGiaoHang",
+        "columnName": "KinhDoHienTai",
+        "type": "decimal"
+      },
+      {
+        "schemaName": "dbo",
+        "objectName": "NhanVienGiaoHang",
+        "columnName": "ToaDoHienTai"
+      }
+    ],
+    "hasDispatchRoutePlan": true,
+    "hasTripRouteGeometry": true,
+    "hasDepotConstraint": true
+  },
+  "warehouses": [
+    {
+      "id": 1,
+      "code": "KHO-BT-PL",
+      "name": "Kho ph\u00E2n lo\u1EA1i B\u00ECnh T\u00E2n",
+      "address": "Khu A - B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01",
+      "branchId": 1,
+      "latitude": null,
+      "longitude": null,
+      "coordinateSource": null,
+      "branchLatitude": 10.810500,
+      "branchLongitude": 106.604800
+    },
+    {
+      "id": 2,
+      "code": "KHO-BT-HOAN",
+      "name": "Kho h\u00E0ng ho\u00E0n B\u00ECnh T\u00E2n",
+      "address": "Khu B - B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01",
+      "branchId": 1,
+      "latitude": null,
+      "longitude": null,
+      "coordinateSource": null,
+      "branchLatitude": 10.810500,
+      "branchLongitude": 106.604800
+    },
+    {
+      "id": 3,
+      "code": "KHO-TP-PL",
+      "name": "Kho ph\u00E2n lo\u1EA1i T\u00E2n Ph\u00FA",
+      "address": "T\u1EA7ng tr\u1EC7t - B\u01B0u c\u1EE5c T\u00E2n Ph\u00FA 01",
+      "branchId": 2,
+      "latitude": null,
+      "longitude": null,
+      "coordinateSource": null,
+      "branchLatitude": 10.802900,
+      "branchLongitude": 106.617900
+    },
+    {
+      "id": 4,
+      "code": "KHO-Q6-PL",
+      "name": "Kho ph\u00E2n lo\u1EA1i Qu\u1EADn 6",
+      "address": "T\u1EA7ng tr\u1EC7t - B\u01B0u c\u1EE5c Qu\u1EADn 6 01",
+      "branchId": 3,
+      "latitude": null,
+      "longitude": null,
+      "coordinateSource": null,
+      "branchLatitude": 10.746900,
+      "branchLongitude": 106.635800
+    }
+  ],
+  "shippers": [
+    {
+      "id": 3,
+      "employeeCode": "GH-TP-001",
+      "branchId": 2,
+      "availability": "DELIVERING",
+      "isActive": true,
+      "activeAssignments": 1,
+      "openTrips": 1
+    }
+  ],
+  "options": {
+    "warehouses": [
+      {
+        "id": 1,
+        "code": "KHO-BT-PL",
+        "branchId": 1,
+        "name": "Kho ph\u00E2n lo\u1EA1i B\u00ECnh T\u00E2n",
+        "address": "Khu A - B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01",
+        "latitude": null,
+        "longitude": null,
+        "coordinateSource": null,
+        "canManageDepot": true
+      },
+      {
+        "id": 2,
+        "code": "KHO-BT-HOAN",
+        "branchId": 1,
+        "name": "Kho h\u00E0ng ho\u00E0n B\u00ECnh T\u00E2n",
+        "address": "Khu B - B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01",
+        "latitude": null,
+        "longitude": null,
+        "coordinateSource": null,
+        "canManageDepot": true
+      },
+      {
+        "id": 3,
+        "code": "KHO-TP-PL",
+        "branchId": 2,
+        "name": "Kho ph\u00E2n lo\u1EA1i T\u00E2n Ph\u00FA",
+        "address": "T\u1EA7ng tr\u1EC7t - B\u01B0u c\u1EE5c T\u00E2n Ph\u00FA 01",
+        "latitude": null,
+        "longitude": null,
+        "coordinateSource": null,
+        "canManageDepot": true
+      },
+      {
+        "id": 4,
+        "code": "KHO-Q6-PL",
+        "branchId": 3,
+        "name": "Kho ph\u00E2n lo\u1EA1i Qu\u1EADn 6",
+        "address": "T\u1EA7ng tr\u1EC7t - B\u01B0u c\u1EE5c Qu\u1EADn 6 01",
+        "latitude": null,
+        "longitude": null,
+        "coordinateSource": null,
+        "canManageDepot": true
+      }
+    ],
+    "shippers": [
+      {
+        "id": 1,
+        "branchId": 1,
+        "availability": "AVAILABLE",
+        "eligibilityReason": null
+      },
+      {
+        "id": 2,
+        "branchId": 1,
+        "availability": "DELIVERING",
+        "eligibilityReason": "Shipper ch\u01B0a s\u1EB5n s\u00E0ng."
+      },
+      {
+        "id": 3,
+        "branchId": 2,
+        "availability": "DELIVERING",
+        "eligibilityReason": "Shipper ch\u01B0a s\u1EB5n s\u00E0ng."
+      },
+      {
+        "id": 4,
+        "branchId": 3,
+        "availability": "AVAILABLE",
+        "eligibilityReason": null
+      },
+      {
+        "id": 5,
+        "branchId": 3,
+        "availability": "OFFLINE",
+        "eligibilityReason": "Shipper/t\u00E0i kho\u1EA3n kh\u00F4ng ho\u1EA1t \u0111\u1ED9ng."
+      }
+    ]
+  },
+  "depotMapping": [
+    {
+      "warehouseId": 1,
+      "code": "KHO-BT-PL",
+      "state": "REJECTED",
+      "status": 409,
+      "message": "Kho \u0111ang ch\u1ECDn ch\u01B0a c\u00F3 t\u1ECDa \u0111\u1ED9 xu\u1EA5t ph\u00E1t.",
+      "businessWrites": false
+    },
+    {
+      "warehouseId": 3,
+      "code": "KHO-TP-PL",
+      "state": "REJECTED",
+      "status": 409,
+      "message": "Kho \u0111ang ch\u1ECDn ch\u01B0a c\u00F3 t\u1ECDa \u0111\u1ED9 xu\u1EA5t ph\u00E1t.",
+      "businessWrites": false
+    }
+  ]
+}

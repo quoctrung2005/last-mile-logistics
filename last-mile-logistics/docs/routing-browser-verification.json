@@ -1,0 +1,176 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "screen": "Login → direct order detail",
+      "url": "#/orders/1",
+      "result": "passed; one detail GET, no list GET"
+    },
+    {
+      "screen": "Tổng quan",
+      "url": "#/dashboard",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Đơn hàng",
+      "url": "#/orders",
+      "result": "passed; real API"
+    },
+    {
+      "screen": "Tồn kho",
+      "url": "#/warehouse/inventory",
+      "result": "passed; real API"
+    },
+    {
+      "screen": "Nhập kho",
+      "url": "#/warehouse/inbound",
+      "result": "passed; real API"
+    },
+    {
+      "screen": "Xuất kho / bàn giao",
+      "url": "#/warehouse/outbound",
+      "result": "passed; real API"
+    },
+    {
+      "screen": "Nhập hàng hoàn",
+      "url": "#/warehouse/returns",
+      "result": "passed; real API"
+    },
+    {
+      "screen": "Vị trí lưu kho",
+      "url": "#/warehouse/locations",
+      "result": "passed; real API"
+    },
+    {
+      "screen": "Lịch sử giao dịch",
+      "url": "#/warehouse/transactions",
+      "result": "passed; real API"
+    },
+    {
+      "screen": "Hàng chờ điều phối",
+      "url": "#/dispatch/orders",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Phân công",
+      "url": "#/dispatch/assignments",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Chuyến giao",
+      "url": "#/dispatch/trips",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Tối ưu tuyến",
+      "url": "#/dispatch/optimization",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Theo dõi giao hàng",
+      "url": "#/tracking",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Thu hộ COD",
+      "url": "#/cod/collections",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Đối soát COD",
+      "url": "#/cod/reconciliation",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Khách hàng",
+      "url": "#/customers",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Nhân viên giao hàng",
+      "url": "#/fleet/couriers",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Phương tiện",
+      "url": "#/fleet/vehicles",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Báo cáo",
+      "url": "#/reports",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Tài khoản",
+      "url": "#/admin/accounts",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Vai trò & quyền",
+      "url": "#/admin/roles",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Danh mục",
+      "url": "#/admin/catalogs",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Bảng giá",
+      "url": "#/admin/pricing",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Nhật ký hệ thống",
+      "url": "#/admin/audit-logs",
+      "result": "passed; existing placeholder"
+    },
+    {
+      "screen": "Orders filters + Back/Forward",
+      "url": "#/orders?status=NEW&keyword=LM",
+      "result": "passed"
+    },
+    {
+      "screen": "Debounce/modal lifecycle",
+      "url": "#/orders → #/dashboard",
+      "result": "passed; no late list GET or retained modal"
+    },
+    {
+      "screen": "Tạo đơn",
+      "url": "#/orders/create",
+      "result": "passed; real options/customer API; no submit"
+    },
+    {
+      "screen": "Sửa đơn",
+      "url": "#/orders/1/edit",
+      "result": "passed routing; existing backend/state limitation preserved"
+    },
+    {
+      "screen": "Chi tiết giao dịch",
+      "url": "#/warehouse/transactions/5",
+      "result": "passed; one detail GET"
+    },
+    {
+      "screen": "Invalid query / missing route",
+      "url": "#/orders?page=-1; #/not-a-route",
+      "result": "passed"
+    },
+    {
+      "screen": "F5/deep-link reload",
+      "url": "#/orders/1",
+      "result": "passed"
+    },
+    {
+      "screen": "F5 inventory filters",
+      "url": "#/warehouse/inventory?warehouseId=1&status=IN_WAREHOUSE&keyword=LM",
+      "result": "passed; one inventory GET"
+    },
+    {
+      "screen": "Logout + denied role/live permission",
+      "url": "#/login; #/admin/accounts; #/orders/create",
+      "result": "passed; no expiry on Forbidden"
+    }
+  ],
+  "errors": []
+}

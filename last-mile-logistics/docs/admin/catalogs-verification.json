@@ -1,0 +1,18 @@
+{
+  "phase": "catalogs",
+  "mode": "Isolated LocalDB schema/seed + real ASP.NET/proxy/Edge; seeded actors use test JWT with independent random signing key.",
+  "checks": [
+    "Five real catalogs create/edit, duplicate codes, invalid parent/coordinates, immutable warehouse branch and reference guards",
+    "Inactive service remains manageable and is excluded from order form service picker",
+    "Catalog browser creates through real API",
+    "Browser edits catalog through real API",
+    "Location uses existing form, API and preserves catalog tab URL",
+    "catalogs-locations viewport 1440",
+    "catalogs-locations viewport 390",
+    "Catalog location tab can inspect locations in inactive warehouse",
+    "Warehouse picker excludes inactive warehouse; dispatch orders API remains accessible",
+    "No JavaScript errors"
+  ],
+  "errors": [],
+  "operationalWrites": false
+}

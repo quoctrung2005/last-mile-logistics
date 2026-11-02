@@ -1,0 +1,5 @@
+CHƯA CÓ MINH CHỨNG DOCKER THỰC CHẠY.
+Môi trường soạn bài không tìm thấy Docker CLI, chỉ có Java 8, chưa có PySpark/Jupyter.
+Không tạo ảnh terminal hay ảnh Master giả. Run-All.ps1 sinh log và bảng Worker thật sau khi chạy.
+Cần bổ sung ảnh Docker, Master 2 Worker, ứng dụng hoàn tất; trước/trong/sau sự cố; notebook đã Run All; benchmark thật.
+reference_results là kết quả đối chiếu bằng Python thuần, KHÔNG phải đầu ra Spark.

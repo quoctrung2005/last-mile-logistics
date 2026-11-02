@@ -1,0 +1,19 @@
+{
+  "phase": "audit",
+  "mode": "Isolated LocalDB schema/seed + real ASP.NET/proxy/Edge; seeded actors use test JWT with independent random signing key.",
+  "checks": [
+    "Real audit newest-first order, totals and distinct backend pages",
+    "Date, actor, action, object and keyword filters enforce validation and permission",
+    "Backend removes nested secret fields and token strings while preserving harmless before/after values",
+    "Audit has no mutation controls",
+    "Filter resets page and preserves query URL",
+    "Before/after JSON is safe text and has no secrets",
+    "Malformed and null JSON handled safely",
+    "audit-detail viewport 1440",
+    "audit-detail viewport 390",
+    "Detail close/reload retains list filters and all audit requests are GET",
+    "No JavaScript errors"
+  ],
+  "errors": [],
+  "operationalWrites": false
+}

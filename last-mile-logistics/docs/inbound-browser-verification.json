@@ -1,0 +1,53 @@
+{
+  "api": [
+    "Legacy orders query unchanged; warehouse branch/status/stock eligibility filters and totals applied before pagination; invalid inbound query 400; empty warehouses/locations return []"
+  ],
+  "browser": [
+    {
+      "viewport": "desktop",
+      "ok": true,
+      "width": 1414,
+      "checks": [
+        "One title/description; no nested lists; empty warehouse locks location/import/filter requests",
+        "Warehouse/location selection scoped; only CONFIRMED/WAITING_INBOUND listed; no import without position",
+        "Refresh warehouse = catalog/location only, selection preserved; refresh list = one filtered orders GET",
+        "Filter, Enter, Vietnamese status codes, empty state, clear defaults and pagination passed with real API totals",
+        "Rapid warehouse switch aborts/ignores delayed old response; resets location/page; positions match current warehouse",
+        "Detail uses real orderId; Back restores warehouse/location/filters",
+        "Preflight/review, missing location, 500-char limit and double-click guard passed; real POST 201 creates exactly one transaction/stock and removes order",
+        "Real backend DTO validation 400 (notes 501 injected only at request boundary) appears inside form; session preserved",
+        "Real concurrent change causes 409; list refreshed, old confirmation locked, no resend or duplicate transaction",
+        "State changed before opening: fresh detail rejects import without any inbound POST",
+        "Position deactivated in real SQL is excluded by current API and blocks preflight; catalog refresh clears invalid choice",
+        "Live permission revoked after review: real 403 inside form, no logout or transaction; old action locked",
+        "Controlled response loss after real 201 commit: session retained, verify-state GET confirms import, no repeated POST",
+        "Controlled list 500 shows error/retry, never expiry; retry returns real API data",
+        "Read-only warehouse user sees disabled import; real POST 403 preserves login; outside-branch inbound query denied"
+      ],
+      "errors": []
+    },
+    {
+      "viewport": "mobile",
+      "ok": true,
+      "width": 390,
+      "checks": [
+        "One title/description; no nested lists; empty warehouse locks location/import/filter requests",
+        "Warehouse/location selection scoped; only CONFIRMED/WAITING_INBOUND listed; no import without position",
+        "Refresh warehouse = catalog/location only, selection preserved; refresh list = one filtered orders GET",
+        "Filter, Enter, Vietnamese status codes, empty state, clear defaults and pagination passed with real API totals",
+        "Rapid warehouse switch aborts/ignores delayed old response; resets location/page; positions match current warehouse",
+        "Detail uses real orderId; Back restores warehouse/location/filters",
+        "Preflight/review, missing location, 500-char limit and double-click guard passed; real POST 201 creates exactly one transaction/stock and removes order",
+        "Real backend DTO validation 400 (notes 501 injected only at request boundary) appears inside form; session preserved",
+        "Real concurrent change causes 409; list refreshed, old confirmation locked, no resend or duplicate transaction",
+        "State changed before opening: fresh detail rejects import without any inbound POST",
+        "Position deactivated in real SQL is excluded by current API and blocks preflight; catalog refresh clears invalid choice",
+        "Live permission revoked after review: real 403 inside form, no logout or transaction; old action locked",
+        "Controlled response loss after real 201 commit: session retained, verify-state GET confirms import, no repeated POST",
+        "Controlled list 500 shows error/retry, never expiry; retry returns real API data",
+        "Read-only warehouse user sees disabled import; real POST 403 preserves login; outside-branch inbound query denied"
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "mode": "Isolated LocalDB schema/seed, real ASP.NET/proxy/Edge. Synthetic JWT only for seeded actors; actual login and refresh verified for newly created accounts. Controlled 409/500 and delayed old GET injected for frontend handling.",
+  "checks": [
+    "Role lookup uses real IDs, branch rules and assignable grants; manager cannot access role-management API",
+    "Real paginated account list includes system-wide ADMIN and full role names",
+    "Search by username/name/phone, empty results and invalid pagination",
+    "View permission, branch scope and filters enforced by backend",
+    "Create checks password length/UTF-8, branch requirement, duplicate username and permission; created account logs in and refreshes",
+    "Edit changes allowed DTO fields, rejects stale version and self role/branch changes",
+    "Linked shipper role/branch changes and deactivation reject outstanding work",
+    "LOCK/UNLOCK/DEACTIVATE/ACTIVATE use real API; temporary unlock clears timestamp/counter; self lock rejected",
+    "Admin reset BCrypt, old password denial, new login, access/refresh revocation, self/non-admin denial",
+    "Create global ADMIN with null branch",
+    "UI title once, eight columns, backend page 2 and complete total",
+    "Detail reload and return preserve filters and expose timestamps without hashes",
+    "Filter resets page and keeps URL",
+    "Edit omits username/password and loads full detail version",
+    "409 preserves form/session and offers explicit reload",
+    "500 keeps form and session",
+    "Browser edit saves through real PUT",
+    "Confirm mismatch remains local and password toggle works",
+    "Password reveal toggles field type",
+    "Real duplicate username keeps create form and session",
+    "Browser creates account with real role/branch lookup and matching password",
+    "Browser lock/unlock confirmation calls real actions and refreshes badge",
+    "Browser reset uses administrative API and reports all-session revocation",
+    "Late list response cannot overwrite newer filters",
+    "Navigation removes dialog and account page",
+    "Manager read-only controls follow actual permission",
+    "Unauthorized route preserves session and does not load accounts",
+    "Viewport 1440 contains page width and scrollable actions",
+    "Viewport 768 contains page width and scrollable actions",
+    "Viewport 390 contains page width and scrollable actions",
+    "Long modal stays inside mobile viewport and scrolls",
+    "Manager with management permission can create own-branch warehouse staff but cannot assign excess SHIPPER grants, promote to ADMIN or cross branch",
+    "Concurrent admin deactivation retains one active ADMIN; last admin self lock/deactivation/demotion rejected",
+    "ADMIN lacking management grant has no mutation controls",
+    "Audit changes exist and exclude password/hash/token data",
+    "No browser JavaScript errors or unhandled rejections"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "browserErrors": [],
+  "persistentOperationalDatabaseWrites": false
+}

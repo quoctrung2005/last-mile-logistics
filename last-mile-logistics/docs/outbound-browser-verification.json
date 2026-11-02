@@ -1,0 +1,97 @@
+{
+  "mode": "read-only LocalDB SQL + isolated browser contract scenarios; no real mutation",
+  "viewports": [
+    {
+      "width": 1366,
+      "pageWidth": 1366,
+      "emptyHeight": 85,
+      "filterTop": 0,
+      "emptyTop": 328.59375,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "pageWidth": 768,
+      "emptyHeight": 85,
+      "filterTop": 0,
+      "emptyTop": 331.1875,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "emptyHeight": 85,
+      "filterTop": 0,
+      "emptyTop": 449.1875,
+      "errors": []
+    }
+  ],
+  "checks": [
+    "one page heading / one list at 1366",
+    "initial choose-warehouse state at 1366",
+    "actual empty result is not an error at 1366",
+    "one page heading / one list at 768",
+    "initial choose-warehouse state at 768",
+    "actual empty result is not an error at 768",
+    "one page heading / one list at 390",
+    "initial choose-warehouse state at 390",
+    "actual empty result is not an error at 390",
+    "copy fallback displays the complete code",
+    "populated table scrolls inside card at 1366",
+    "populated table scrolls inside card at 390",
+    "8 columns, codes truncate and full code is available",
+    "PENDING cannot hand over and explains why",
+    "assignment filtering reaches API before pagination",
+    "Enter applies keyword and location",
+    "clear filters preserves warehouse",
+    "pagination loads page 2",
+    "page size resets page",
+    "detail opens exact orderId and retains return filters",
+    "double open creates exactly one modal",
+    "cancel releases modal and backdrop",
+    "invalid shipper/vehicle, order and stock all disable handover",
+    "modal rechecks current stock source rather than selected filter",
+    "submit locks controls",
+    "one POST and distinct IDs / stock source",
+    "success closes modal and informs shipper confirmation",
+    "409 refreshes without automatic POST retry",
+    "conflict close leaves no dialog/backdrop",
+    "Escape closes modal without scroll lock",
+    "changed assignment is rejected before POST",
+    "read failure 403 preserves session and shows retry",
+    "read failure 500 preserves session and shows retry",
+    "read failure -1 preserves session and shows retry",
+    "old request cannot overwrite changed warehouse",
+    "remount attaches each filter listener once",
+    "no runtime errors in all browser scenarios"
+  ],
+  "consoleErrors": [],
+  "sqlChecks": [
+    "warehouse 1: PENDING total=0, pageSize=1",
+    "warehouse 1: ACCEPTED total=0, pageSize=1",
+    "warehouse 2: PENDING total=0, pageSize=1",
+    "warehouse 2: ACCEPTED total=0, pageSize=1",
+    "warehouse 3: PENDING total=0, pageSize=1",
+    "warehouse 3: ACCEPTED total=0, pageSize=1",
+    "warehouse 4: PENDING total=0, pageSize=1",
+    "warehouse 4: ACCEPTED total=0, pageSize=1"
+  ],
+  "actualWarehouses": [
+    {
+      "id": 1,
+      "rows": 0
+    },
+    {
+      "id": 2,
+      "rows": 0
+    },
+    {
+      "id": 3,
+      "rows": 0
+    },
+    {
+      "id": 4,
+      "rows": 0
+    }
+  ]
+}

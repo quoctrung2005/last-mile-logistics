@@ -1,0 +1,25 @@
+{
+    "checkedAt":  "2026-10-17T17:01:02.8632245+07:00",
+    "environment":  "Development",
+    "server":  "(localdb)\\MSSQLLocalDB",
+    "database":  "QLGiaoHangChangCuoi",
+    "configurationSource":  "D:\\DA_CN_logistics\\last-mile-logistics\\backend\\LastMile\\LastMile.Api\\appsettings.json",
+    "migration":  "20261017_dispatch_planning.sql",
+    "schemaReady":  true,
+    "idempotentSecondPass":  true,
+    "businessCountsBefore":  {
+                                 "TaiKhoan":  16,
+                                 "Kho":  4,
+                                 "DonHang":  16,
+                                 "ChuyenGiaoHang":  3
+                             },
+    "businessCountsAfter":  {
+                                "TaiKhoan":  16,
+                                "Kho":  4,
+                                "DonHang":  16,
+                                "ChuyenGiaoHang":  3
+                            },
+    "businessCountsUnchanged":  true,
+    "warehousesWithCoordinates":  0,
+    "warehouseCoordinatesWritten":  false
+}

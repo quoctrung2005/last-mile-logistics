@@ -1,0 +1,205 @@
+{
+  "mode": "Actual location SQL + isolated browser catalog fixtures; no real HTTP POST",
+  "checks": [
+    "one title, correct description and no position dropdown 1366",
+    "no location request before warehouse selection 1366",
+    "six columns, no choose-position button 1366",
+    "one title, correct description and no position dropdown 768",
+    "no location request before warehouse selection 768",
+    "six columns, no choose-position button 768",
+    "one title, correct description and no position dropdown 390",
+    "no location request before warehouse selection 390",
+    "six columns, no choose-position button 390",
+    "search goes to API",
+    "inactive empty state is valid",
+    "code is validated without changing user input",
+    "duplicate is inline and modal stays open",
+    "save locked to one request",
+    "create uses exact catalog mapping once",
+    "edit retains code and warehouse",
+    "DTO error maps to its field",
+    "500 keeps form and session",
+    "edit uses existing location ID",
+    "confirmation identifies exact code",
+    "occupied location backend reason shown",
+    "inactive location remains manageable",
+    "reactivation saved without deletion",
+    "inventory sends exact warehouse/location filter",
+    "inventory page 2 uses server total",
+    "old warehouse response rejected and filters reset",
+    "no permission hides all management controls",
+    "403 does not expire session",
+    "read error 500 shows retry",
+    "read error -1 shows retry",
+    "non-admin stays read-only even with catalog permission code",
+    "toolbar disposed on route leave",
+    "remount listeners run once",
+    "no console exceptions"
+  ],
+  "viewports": [
+    {
+      "width": 1366,
+      "pageWidth": 1366,
+      "actionsWidth": 399.234375,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "pageWidth": 768,
+      "actionsWidth": 359.859375,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "actionsWidth": 359.859375,
+      "errors": []
+    }
+  ],
+  "consoleErrors": [],
+  "sqlChecks": [
+    {
+      "status": "ACTIVE",
+      "warehouseId": 1,
+      "rows": 3
+    },
+    {
+      "status": "INACTIVE",
+      "warehouseId": 1,
+      "rows": 0
+    },
+    {
+      "status": "ALL",
+      "warehouseId": 1,
+      "rows": 3
+    },
+    {
+      "warehouseId": 1,
+      "searchField": "code",
+      "passed": true
+    },
+    {
+      "warehouseId": 1,
+      "searchField": "storageArea",
+      "passed": true
+    },
+    {
+      "warehouseId": 1,
+      "searchField": "rack",
+      "passed": true
+    },
+    {
+      "warehouseId": 1,
+      "searchField": "slot",
+      "passed": true
+    },
+    {
+      "status": "ACTIVE",
+      "warehouseId": 2,
+      "rows": 2
+    },
+    {
+      "status": "INACTIVE",
+      "warehouseId": 2,
+      "rows": 0
+    },
+    {
+      "status": "ALL",
+      "warehouseId": 2,
+      "rows": 2
+    },
+    {
+      "warehouseId": 2,
+      "searchField": "code",
+      "passed": true
+    },
+    {
+      "warehouseId": 2,
+      "searchField": "storageArea",
+      "passed": true
+    },
+    {
+      "warehouseId": 2,
+      "searchField": "rack",
+      "passed": true
+    },
+    {
+      "warehouseId": 2,
+      "searchField": "slot",
+      "passed": true
+    },
+    {
+      "status": "ACTIVE",
+      "warehouseId": 3,
+      "rows": 4
+    },
+    {
+      "status": "INACTIVE",
+      "warehouseId": 3,
+      "rows": 0
+    },
+    {
+      "status": "ALL",
+      "warehouseId": 3,
+      "rows": 4
+    },
+    {
+      "warehouseId": 3,
+      "searchField": "code",
+      "passed": true
+    },
+    {
+      "warehouseId": 3,
+      "searchField": "storageArea",
+      "passed": true
+    },
+    {
+      "warehouseId": 3,
+      "searchField": "rack",
+      "passed": true
+    },
+    {
+      "warehouseId": 3,
+      "searchField": "slot",
+      "passed": true
+    },
+    {
+      "status": "ACTIVE",
+      "warehouseId": 4,
+      "rows": 4
+    },
+    {
+      "status": "INACTIVE",
+      "warehouseId": 4,
+      "rows": 0
+    },
+    {
+      "status": "ALL",
+      "warehouseId": 4,
+      "rows": 4
+    },
+    {
+      "warehouseId": 4,
+      "searchField": "code",
+      "passed": true
+    },
+    {
+      "warehouseId": 4,
+      "searchField": "storageArea",
+      "passed": true
+    },
+    {
+      "warehouseId": 4,
+      "searchField": "rack",
+      "passed": true
+    },
+    {
+      "warehouseId": 4,
+      "searchField": "slot",
+      "passed": true
+    },
+    {
+      "otherBranchDenied": true
+    }
+  ]
+}

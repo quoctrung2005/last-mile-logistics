@@ -1,0 +1,368 @@
+{
+  "mode": "Read-only Development configuration including user secrets/environment; no database writes",
+  "server": "(localdb)\\MSSQLLocalDB",
+  "configurationSource": "JsonConfigurationProvider for \u0027appsettings.json\u0027 (Required)",
+  "data": {
+    "databaseName": "QLGiaoHangChangCuoi",
+    "vehicleColumns": [
+      {
+        "name": "MaPhuongTien",
+        "type": "bigint"
+      },
+      {
+        "name": "KyHieuPhuongTien",
+        "type": "varchar"
+      },
+      {
+        "name": "BienSo",
+        "type": "nvarchar"
+      },
+      {
+        "name": "LoaiXe",
+        "type": "varchar"
+      },
+      {
+        "name": "KhoiLuongDenKg",
+        "type": "decimal"
+      },
+      {
+        "name": "TheTichToiDaM3",
+        "type": "decimal"
+      },
+      {
+        "name": "TrangThaiPhuongTien",
+        "type": "varchar"
+      },
+      {
+        "name": "DangHoatDong",
+        "type": "bit"
+      }
+    ],
+    "totalVehicles": 5,
+    "activeAvailable": 2,
+    "vehicles": [
+      {
+        "id": 1,
+        "code": "XE-BT-001",
+        "licensePlate": "59H1-812.34",
+        "vehicleType": "MOTORBIKE",
+        "status": "AVAILABLE",
+        "isActive": true,
+        "currentShipperId": 1,
+        "branchId": 1,
+        "eligibility": "ALREADY_LINKED"
+      },
+      {
+        "id": 2,
+        "code": "XE-BT-002",
+        "licensePlate": "59H2-463.27",
+        "vehicleType": "MOTORBIKE",
+        "status": "IN_USE",
+        "isActive": true,
+        "currentShipperId": 2,
+        "branchId": 1,
+        "eligibility": "NOT_AVAILABLE"
+      },
+      {
+        "id": 3,
+        "code": "XE-TP-001",
+        "licensePlate": "59D2-375.61",
+        "vehicleType": "MOTORBIKE",
+        "status": "IN_USE",
+        "isActive": true,
+        "currentShipperId": 3,
+        "branchId": 2,
+        "eligibility": "NOT_AVAILABLE"
+      },
+      {
+        "id": 4,
+        "code": "XE-Q6-001",
+        "licensePlate": "59K1-724.18",
+        "vehicleType": "MOTORBIKE",
+        "status": "AVAILABLE",
+        "isActive": true,
+        "currentShipperId": 4,
+        "branchId": 3,
+        "eligibility": "ALREADY_LINKED"
+      },
+      {
+        "id": 5,
+        "code": "XE-Q6-002",
+        "licensePlate": "59K2-518.42",
+        "vehicleType": "MOTORBIKE",
+        "status": "INACTIVE",
+        "isActive": false,
+        "currentShipperId": null,
+        "branchId": null,
+        "eligibility": "INACTIVE"
+      }
+    ]
+  },
+  "verificationLayer": "Updated controller and real SQL with live permission checks; JWT middleware covered separately in isolated HTTP tests",
+  "selectionResults": [
+    {
+      "page": 1,
+      "pageSize": 100,
+      "totalItems": 3,
+      "eligibleTotalItems": 0,
+      "scopedTotalItems": 3,
+      "selectionShipperId": 1,
+      "selectionBranchId": 1,
+      "selectionBranchName": "B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01",
+      "items": [
+        {
+          "id": 1,
+          "code": "XE-BT-001",
+          "licensePlate": "59H1-812.34",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 85.00,
+          "maxVolumeM3": 0.320,
+          "status": "AVAILABLE",
+          "isActive": true,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111ang g\u1EAFn v\u1EDBi ch\u00EDnh shipper n\u00E0y.",
+          "isCurrentVehicle": true,
+          "currentShipperId": 1,
+          "currentShipperName": "Nguy\u1EC5n Minh Tu\u1EA5n",
+          "currentShipperBranchId": 1,
+          "currentShipperBranchName": "B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01"
+        },
+        {
+          "id": 2,
+          "code": "XE-BT-002",
+          "licensePlate": "59H2-463.27",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 90.00,
+          "maxVolumeM3": 0.350,
+          "status": "IN_USE",
+          "isActive": true,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111ang s\u1EED d\u1EE5ng.",
+          "isCurrentVehicle": false,
+          "currentShipperId": 2,
+          "currentShipperName": "Tr\u1EA7n Qu\u1ED1c B\u1EA3o",
+          "currentShipperBranchId": 1,
+          "currentShipperBranchName": "B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01"
+        },
+        {
+          "id": 5,
+          "code": "XE-Q6-002",
+          "licensePlate": "59K2-518.42",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 85.00,
+          "maxVolumeM3": 0.320,
+          "status": "INACTIVE",
+          "isActive": false,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111\u00E3 ng\u1EEBng ho\u1EA1t \u0111\u1ED9ng.",
+          "isCurrentVehicle": false,
+          "currentShipperId": null,
+          "currentShipperName": null,
+          "currentShipperBranchId": null,
+          "currentShipperBranchName": null
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "pageSize": 100,
+      "totalItems": 3,
+      "eligibleTotalItems": 0,
+      "scopedTotalItems": 3,
+      "selectionShipperId": 2,
+      "selectionBranchId": 1,
+      "selectionBranchName": "B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01",
+      "items": [
+        {
+          "id": 1,
+          "code": "XE-BT-001",
+          "licensePlate": "59H1-812.34",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 85.00,
+          "maxVolumeM3": 0.320,
+          "status": "AVAILABLE",
+          "isActive": true,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111\u00E3 \u0111\u01B0\u1EE3c g\u00E1n cho shipper kh\u00E1c.",
+          "isCurrentVehicle": false,
+          "currentShipperId": 1,
+          "currentShipperName": "Nguy\u1EC5n Minh Tu\u1EA5n",
+          "currentShipperBranchId": 1,
+          "currentShipperBranchName": "B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01"
+        },
+        {
+          "id": 2,
+          "code": "XE-BT-002",
+          "licensePlate": "59H2-463.27",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 90.00,
+          "maxVolumeM3": 0.350,
+          "status": "IN_USE",
+          "isActive": true,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111ang g\u1EAFn v\u1EDBi ch\u00EDnh shipper n\u00E0y.",
+          "isCurrentVehicle": true,
+          "currentShipperId": 2,
+          "currentShipperName": "Tr\u1EA7n Qu\u1ED1c B\u1EA3o",
+          "currentShipperBranchId": 1,
+          "currentShipperBranchName": "B\u01B0u c\u1EE5c B\u00ECnh T\u00E2n 01"
+        },
+        {
+          "id": 5,
+          "code": "XE-Q6-002",
+          "licensePlate": "59K2-518.42",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 85.00,
+          "maxVolumeM3": 0.320,
+          "status": "INACTIVE",
+          "isActive": false,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111\u00E3 ng\u1EEBng ho\u1EA1t \u0111\u1ED9ng.",
+          "isCurrentVehicle": false,
+          "currentShipperId": null,
+          "currentShipperName": null,
+          "currentShipperBranchId": null,
+          "currentShipperBranchName": null
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "pageSize": 100,
+      "totalItems": 2,
+      "eligibleTotalItems": 0,
+      "scopedTotalItems": 2,
+      "selectionShipperId": 3,
+      "selectionBranchId": 2,
+      "selectionBranchName": "B\u01B0u c\u1EE5c T\u00E2n Ph\u00FA 01",
+      "items": [
+        {
+          "id": 3,
+          "code": "XE-TP-001",
+          "licensePlate": "59D2-375.61",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 80.00,
+          "maxVolumeM3": 0.300,
+          "status": "IN_USE",
+          "isActive": true,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111ang g\u1EAFn v\u1EDBi ch\u00EDnh shipper n\u00E0y.",
+          "isCurrentVehicle": true,
+          "currentShipperId": 3,
+          "currentShipperName": "L\u00EA Ho\u00E0ng Ph\u00FAc",
+          "currentShipperBranchId": 2,
+          "currentShipperBranchName": "B\u01B0u c\u1EE5c T\u00E2n Ph\u00FA 01"
+        },
+        {
+          "id": 5,
+          "code": "XE-Q6-002",
+          "licensePlate": "59K2-518.42",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 85.00,
+          "maxVolumeM3": 0.320,
+          "status": "INACTIVE",
+          "isActive": false,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111\u00E3 ng\u1EEBng ho\u1EA1t \u0111\u1ED9ng.",
+          "isCurrentVehicle": false,
+          "currentShipperId": null,
+          "currentShipperName": null,
+          "currentShipperBranchId": null,
+          "currentShipperBranchName": null
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "pageSize": 100,
+      "totalItems": 2,
+      "eligibleTotalItems": 0,
+      "scopedTotalItems": 2,
+      "selectionShipperId": 4,
+      "selectionBranchId": 3,
+      "selectionBranchName": "B\u01B0u c\u1EE5c Qu\u1EADn 6 01",
+      "items": [
+        {
+          "id": 4,
+          "code": "XE-Q6-001",
+          "licensePlate": "59K1-724.18",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 100.00,
+          "maxVolumeM3": 0.380,
+          "status": "AVAILABLE",
+          "isActive": true,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111ang g\u1EAFn v\u1EDBi ch\u00EDnh shipper n\u00E0y.",
+          "isCurrentVehicle": true,
+          "currentShipperId": 4,
+          "currentShipperName": "Ph\u1EA1m Gia Huy",
+          "currentShipperBranchId": 3,
+          "currentShipperBranchName": "B\u01B0u c\u1EE5c Qu\u1EADn 6 01"
+        },
+        {
+          "id": 5,
+          "code": "XE-Q6-002",
+          "licensePlate": "59K2-518.42",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 85.00,
+          "maxVolumeM3": 0.320,
+          "status": "INACTIVE",
+          "isActive": false,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111\u00E3 ng\u1EEBng ho\u1EA1t \u0111\u1ED9ng.",
+          "isCurrentVehicle": false,
+          "currentShipperId": null,
+          "currentShipperName": null,
+          "currentShipperBranchId": null,
+          "currentShipperBranchName": null
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "pageSize": 100,
+      "totalItems": 2,
+      "eligibleTotalItems": 0,
+      "scopedTotalItems": 2,
+      "selectionShipperId": 5,
+      "selectionBranchId": 3,
+      "selectionBranchName": "B\u01B0u c\u1EE5c Qu\u1EADn 6 01",
+      "items": [
+        {
+          "id": 4,
+          "code": "XE-Q6-001",
+          "licensePlate": "59K1-724.18",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 100.00,
+          "maxVolumeM3": 0.380,
+          "status": "AVAILABLE",
+          "isActive": true,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111\u00E3 \u0111\u01B0\u1EE3c g\u00E1n cho shipper kh\u00E1c.",
+          "isCurrentVehicle": false,
+          "currentShipperId": 4,
+          "currentShipperName": "Ph\u1EA1m Gia Huy",
+          "currentShipperBranchId": 3,
+          "currentShipperBranchName": "B\u01B0u c\u1EE5c Qu\u1EADn 6 01"
+        },
+        {
+          "id": 5,
+          "code": "XE-Q6-002",
+          "licensePlate": "59K2-518.42",
+          "vehicleType": "MOTORBIKE",
+          "maxWeightKg": 85.00,
+          "maxVolumeM3": 0.320,
+          "status": "INACTIVE",
+          "isActive": false,
+          "canSelect": false,
+          "unavailableReason": "Xe \u0111\u00E3 ng\u1EEBng ho\u1EA1t \u0111\u1ED9ng.",
+          "isCurrentVehicle": false,
+          "currentShipperId": null,
+          "currentShipperName": null,
+          "currentShipperBranchId": null,
+          "currentShipperBranchName": null
+        }
+      ]
+    }
+  ]
+}

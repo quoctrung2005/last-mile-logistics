@@ -1,0 +1,28 @@
+{
+  "phase": "regression",
+  "mode": "Isolated LocalDB schema/seed + real ASP.NET/proxy/Edge; seeded actors use test JWT with independent random signing key.",
+  "checks": [
+    "Existing create-order form submits to real API with actual customers/addresses/services",
+    "Existing inbound modal performs real confirmation and stores new order in warehouse",
+    "Dispatch queue/candidate APIs still accept the warehouse-ready order; dispatch UI is existing placeholder",
+    "roles-list renders one shell title and real rows",
+    "roles-list viewport 1440",
+    "roles-list viewport 390",
+    "catalogs-areas renders one shell title and real rows",
+    "catalogs-areas viewport 1440",
+    "catalogs-areas viewport 390",
+    "catalogs-locations renders one shell title and real rows",
+    "catalogs-locations viewport 1440",
+    "catalogs-locations viewport 390",
+    "Selected catalog tab is readable",
+    "pricing-list renders one shell title and real rows",
+    "pricing-list viewport 1440",
+    "pricing-list viewport 390",
+    "audit-list renders one shell title and real rows",
+    "audit-list viewport 1440",
+    "audit-list viewport 390",
+    "No JavaScript errors"
+  ],
+  "errors": [],
+  "operationalWrites": false
+}

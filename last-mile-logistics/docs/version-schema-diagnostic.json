@@ -1,0 +1,211 @@
+{
+    "checkedAtUtc":  "2026-10-20T01:27:11.7263107+00:00",
+    "mode":  "read-only schema metadata and optional list/detail GET actions; no migration or application writes",
+    "environment":  "Development",
+    "configurationSource":  "appsettings.json",
+    "configuredServer":  "(localdb)\\MSSQLLocalDB",
+    "configuredDatabase":  "QLGiaoHangChangCuoi",
+    "server":  "trungdz\\LOCALDB#A7E83606",
+    "database":  "QLGiaoHangChangCuoi",
+    "tables":  [
+                   {
+                       "table":  "dbo.DiaChiKhachHang",
+                       "tableExists":  true,
+                       "hasVersion":  true,
+                       "type":  "timestamp",
+                       "bytes":  8,
+                       "nullable":  false,
+                       "validRowversion":  true,
+                       "canViewDefinition":  true,
+                       "rowversionColumns":  [
+                                                 {
+                                                     "columnName":  "PhienBan"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "table":  "dbo.DonHang",
+                       "tableExists":  true,
+                       "hasVersion":  true,
+                       "type":  "timestamp",
+                       "bytes":  8,
+                       "nullable":  false,
+                       "validRowversion":  true,
+                       "canViewDefinition":  true,
+                       "rowversionColumns":  [
+                                                 {
+                                                     "columnName":  "PhienBan"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "table":  "dbo.KhachHang",
+                       "tableExists":  true,
+                       "hasVersion":  true,
+                       "type":  "timestamp",
+                       "bytes":  8,
+                       "nullable":  false,
+                       "validRowversion":  true,
+                       "canViewDefinition":  true,
+                       "rowversionColumns":  [
+                                                 {
+                                                     "columnName":  "PhienBan"
+                                                 }
+                                             ]
+                   },
+                   {
+                       "table":  "dbo.NhanVienGiaoHang",
+                       "tableExists":  true,
+                       "hasVersion":  false,
+                       "type":  null,
+                       "bytes":  null,
+                       "nullable":  null,
+                       "validRowversion":  false,
+                       "canViewDefinition":  true,
+                       "rowversionColumns":  [
+
+                                             ]
+                   },
+                   {
+                       "table":  "dbo.PhuongTien",
+                       "tableExists":  true,
+                       "hasVersion":  false,
+                       "type":  null,
+                       "bytes":  null,
+                       "nullable":  null,
+                       "validRowversion":  false,
+                       "canViewDefinition":  true,
+                       "rowversionColumns":  [
+
+                                             ]
+                   },
+                   {
+                       "table":  "dbo.TaiKhoan",
+                       "tableExists":  true,
+                       "hasVersion":  true,
+                       "type":  "timestamp",
+                       "bytes":  8,
+                       "nullable":  false,
+                       "validRowversion":  true,
+                       "canViewDefinition":  true,
+                       "rowversionColumns":  [
+                                                 {
+                                                     "columnName":  "PhienBan"
+                                                 }
+                                             ]
+                   }
+               ],
+    "probes":  [
+                   {
+                       "controller":  "ShippersController.Get",
+                       "table":  "dbo.NhanVienGiaoHang",
+                       "alias":  "nv",
+                       "reference":  "nv.PhienBan",
+                       "sql":  "SELECT TOP (0) CONVERT(VARBINARY(8), nv.PhienBan) AS version FROM dbo.NhanVienGiaoHang nv;",
+                       "success":  false,
+                       "sqlError":  207,
+                       "migration":  "20261019_shipper_vehicle_versions.sql"
+                   },
+                   {
+                       "controller":  "ShipperUpdateController.Update",
+                       "table":  "dbo.NhanVienGiaoHang",
+                       "alias":  "nv",
+                       "reference":  "nv.PhienBan",
+                       "sql":  "SELECT TOP (0) CONVERT(VARBINARY(8), nv.PhienBan) AS version FROM dbo.NhanVienGiaoHang nv;",
+                       "success":  false,
+                       "sqlError":  207,
+                       "migration":  "20261019_shipper_vehicle_versions.sql"
+                   },
+                   {
+                       "controller":  "VehiclesController.Get",
+                       "table":  "dbo.PhuongTien",
+                       "alias":  "pt",
+                       "reference":  "pt.PhienBan",
+                       "sql":  "SELECT TOP (0) CONVERT(VARBINARY(8), pt.PhienBan) AS version FROM dbo.PhuongTien pt;",
+                       "success":  false,
+                       "sqlError":  207,
+                       "migration":  "20261019_shipper_vehicle_versions.sql"
+                   },
+                   {
+                       "controller":  "VehicleSaveController.Save",
+                       "table":  "dbo.PhuongTien",
+                       "alias":  "",
+                       "reference":  "PhienBan",
+                       "sql":  "SELECT TOP (0) CONVERT(VARBINARY(8), PhienBan) AS version FROM dbo.PhuongTien;",
+                       "success":  false,
+                       "sqlError":  207,
+                       "migration":  "20261019_shipper_vehicle_versions.sql"
+                   },
+                   {
+                       "controller":  "CustomerDetailController.Get",
+                       "table":  "dbo.KhachHang",
+                       "alias":  "kh",
+                       "reference":  "kh.PhienBan",
+                       "sql":  "SELECT TOP (0) CONVERT(VARBINARY(8), kh.PhienBan) AS version FROM dbo.KhachHang kh;",
+                       "success":  true,
+                       "sqlError":  null,
+                       "migration":  "20261019_customer_versions.sql"
+                   },
+                   {
+                       "controller":  "CustomerAddressUpdateController.Update",
+                       "table":  "dbo.DiaChiKhachHang",
+                       "alias":  "dc",
+                       "reference":  "dc.PhienBan",
+                       "sql":  "SELECT TOP (0) CONVERT(VARBINARY(8), dc.PhienBan) AS version FROM dbo.DiaChiKhachHang dc;",
+                       "success":  true,
+                       "sqlError":  null,
+                       "migration":  "20261019_customer_versions.sql"
+                   }
+               ],
+    "readControllers":  [
+                            {
+                                "controller":  "ShippersController.Get",
+                                "mode":  "list",
+                                "success":  false,
+                                "sqlError":  207,
+                                "statementErrors":  [
+                                                        {
+                                                            "number":  207,
+                                                            "line":  63
+                                                        }
+                                                    ]
+                            },
+                            {
+                                "controller":  "VehiclesController.Get",
+                                "mode":  "list",
+                                "success":  false,
+                                "sqlError":  207,
+                                "statementErrors":  [
+                                                        {
+                                                            "number":  207,
+                                                            "line":  109
+                                                        }
+                                                    ]
+                            },
+                            {
+                                "controller":  "ShippersController.Get",
+                                "mode":  "detail",
+                                "success":  false,
+                                "sqlError":  207,
+                                "statementErrors":  [
+                                                        {
+                                                            "number":  207,
+                                                            "line":  63
+                                                        }
+                                                    ]
+                            },
+                            {
+                                "controller":  "VehiclesController.Get",
+                                "mode":  "detail",
+                                "success":  false,
+                                "sqlError":  207,
+                                "statementErrors":  [
+                                                        {
+                                                            "number":  207,
+                                                            "line":  109
+                                                        }
+                                                    ]
+                            }
+                        ],
+    "schemaReady":  false
+}

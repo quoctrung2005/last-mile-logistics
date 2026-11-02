@@ -1,0 +1,30 @@
+{
+  "mode": "Real HTTP/JWT/SQL/native decoder on isolated LocalDB and private content root",
+  "checks": [
+    "Reject text.jpg with 4xx and no file",
+    "Reject signature.png with 4xx and no file",
+    "Reject signature.jpg with 4xx and no file",
+    "Reject truncated.png with 4xx and no file",
+    "Reject truncated.jpg with 4xx and no file",
+    "Reject missing-end.png with 4xx and no file",
+    "Reject missing-end.jpg with 4xx and no file",
+    "Reject oversize.png with 4xx and no file",
+    "Reject wide.png with 4xx and no file",
+    "Reject pixels.png with 4xx and no file",
+    "Reject bad-idat.png with 4xx and no file",
+    "Reject bad-entropy.jpg with 4xx and no file",
+    "Reject animated.png with 4xx and no file",
+    "Reject unsupported.gif with 4xx and no file",
+    "Non-shipper cannot upload even with an administrator JWT",
+    "Missing permission is rejected before image processing",
+    "Attempt ownership check remains active",
+    "Coordinate range and pair validation remain active",
+    "All rejected uploads leave evidence and success audit counts unchanged",
+    "Upload and authenticated download valid.png despite misleading filename/MIME",
+    "Upload and authenticated download valid.jpg despite misleading filename/MIME",
+    "Upload and authenticated download max-size.png despite misleading filename/MIME",
+    "Successful uploads produce exactly one evidence, file and audit each, with generated safe paths",
+    "SQL failure before commit rolls back evidence/audit and deletes the staged file"
+  ],
+  "count": 24
+}

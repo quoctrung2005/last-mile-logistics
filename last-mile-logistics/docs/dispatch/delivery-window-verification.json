@@ -1,0 +1,15 @@
+{
+  "mode": "Real HTTP/JWT/API/SQL with GUID test database; no operational writes",
+  "checks": [
+    "Queue API exposes the actual earliest and latest service-start times from SQL",
+    "Real SQL requestedDeliveryAt becomes persisted proposal timing; totals include waiting, service and depot return",
+    "Changing requestedDeliveryAt after preview returns 409 and creates no trip or assignment",
+    "Changing expectedDeliveryAt after preview also invalidates the plan fingerprint with 409",
+    "Manual API uses the same service-start/wait/departure evaluator as automatic planning",
+    "Confirmation recomputes tampered saved timing, persists UTC route JSON with waiting and preserves planned-arrival column meaning",
+    "Missing expectedDeliveryAt stays null and unbounded while a requested start still causes waiting",
+    "Null requestedDeliveryAt preserves the prior zero-wait schedule over real API/SQL",
+    "Reversed SQL delivery windows have explicit per-order errors and manual planning returns 422"
+  ],
+  "count": 9
+}

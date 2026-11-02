@@ -1,0 +1,14 @@
+# Temporary integration-test builds, browser profiles and screenshots at project root.
+# Test source belongs in frontend/tests; keep docs and database source tracked.
+/.*-check/
+
+# Test scratch data (created on demand by browser harnesses).
+/frontend/tests/.artifacts/
+
+# Generated .NET build output and Visual Studio cache.
+**/bin/
+**/obj/
+.vs/
+
+# Installed frontend dependencies.
+node_modules/

@@ -1,0 +1,162 @@
+{
+  "mode": "Actual LocalDB transactions/details/orders + isolated read-only transport",
+  "checks": [
+    "one title/refresh and no nested sections 1366",
+    "all warehouses works without location/order ID controls 1366",
+    "Vietnam UTC rendering does not add timezone twice 1366",
+    "one title/refresh and no nested sections 768",
+    "all warehouses works without location/order ID controls 768",
+    "Vietnam UTC rendering does not add timezone twice 768",
+    "one title/refresh and no nested sections 390",
+    "all warehouses works without location/order ID controls 390",
+    "Vietnam UTC rendering does not add timezone twice 390",
+    "search by supplied code 9",
+    "search by supplied code 10",
+    "search by supplied code 11",
+    "Enter gives compact empty state without paging",
+    "clear really reloads all scoped results",
+    "transaction type INBOUND",
+    "transaction type MOVE",
+    "transaction type OUTBOUND",
+    "transaction type RETURN_IN",
+    "date range sent as Vietnamese calendar dates",
+    "reversed date range stops request",
+    "backend-compatible page size 1 shows pager",
+    "page 2 request and exact record order",
+    "filter change resets pagination",
+    "detail uses exact transaction ID once, has branch and placeholders",
+    "history detail has no mutation controls",
+    "order router uses orderId, returns to history filters",
+    "detail error offers retry without changing data",
+    "legacy detail link closes to list",
+    "old response cannot overwrite changed filters",
+    "error 401 is not blanket session expiry",
+    "error 403 is not blanket session expiry",
+    "error 400 is not blanket session expiry",
+    "error 409 is not blanket session expiry",
+    "error 500 is not blanket session expiry",
+    "error -1 is not blanket session expiry",
+    "missing KHO_XEM denies page and keeps session",
+    "missing DONHANG_XEM hides order navigation",
+    "refresh disposed 0",
+    "refresh disposed 1",
+    "remount search fires once",
+    "long actual detail scrolls within viewport",
+    "Escape releases detail modal cleanly",
+    "no mutations or console exceptions"
+  ],
+  "viewports": [
+    {
+      "width": 1366,
+      "pageWidth": 1351,
+      "tableTop": 332.59375,
+      "stickyAction": "sticky",
+      "actionRight": 1323,
+      "cardRight": 1324,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "pageWidth": 768,
+      "tableTop": 347.1875,
+      "stickyAction": "sticky",
+      "actionRight": 753,
+      "cardRight": 754,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "tableTop": 565.1875,
+      "stickyAction": "sticky",
+      "actionRight": 375,
+      "cardRight": 376,
+      "errors": []
+    }
+  ],
+  "consoleErrors": [],
+  "sqlChecks": [
+    {
+      "label": "all scoped warehouses, newest first, details",
+      "totalItems": 9,
+      "passed": true
+    },
+    {
+      "label": "type INBOUND",
+      "totalItems": 4,
+      "passed": true
+    },
+    {
+      "label": "type MOVE",
+      "totalItems": 2,
+      "passed": true
+    },
+    {
+      "label": "type OUTBOUND",
+      "totalItems": 3,
+      "passed": true
+    },
+    {
+      "label": "type RETURN_IN",
+      "totalItems": 0,
+      "passed": true
+    },
+    {
+      "label": "keyword field matched",
+      "totalItems": 1,
+      "passed": true
+    },
+    {
+      "label": "keyword field matched",
+      "totalItems": 3,
+      "passed": true
+    },
+    {
+      "label": "keyword field matched",
+      "totalItems": 3,
+      "passed": true
+    },
+    {
+      "label": "Vietnam calendar day maps to UTC boundaries",
+      "totalItems": 9,
+      "day": "2026-10-04",
+      "passed": true
+    },
+    {
+      "passed": true,
+      "label": "from boundary inclusive"
+    },
+    {
+      "passed": true,
+      "label": "to boundary exclusive"
+    },
+    {
+      "passed": true,
+      "label": "legacy orderId filter"
+    },
+    {
+      "passed": true,
+      "label": "server page 2"
+    },
+    {
+      "passed": true,
+      "label": "empty search response"
+    },
+    {
+      "passed": true,
+      "label": "non-admin branch scope"
+    },
+    {
+      "passed": true,
+      "label": "other branch detail unavailable"
+    },
+    {
+      "passed": true,
+      "label": "invalid account has no read scope"
+    },
+    {
+      "passed": true,
+      "label": "account without KHO_XEM has no read scope"
+    }
+  ]
+}

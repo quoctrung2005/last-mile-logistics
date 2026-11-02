@@ -1,0 +1,529 @@
+{
+  "5": {
+    "sum": 177,
+    "min": 12,
+    "max": 40,
+    "mean": 25.285714285714285,
+    "count": 7
+  },
+  "6": [
+    "hadoop",
+    "java",
+    "python",
+    "scala",
+    "spark"
+  ],
+  "7": [
+    [
+      "data",
+      3
+    ],
+    [
+      "spark",
+      3
+    ],
+    [
+      "big",
+      2
+    ],
+    [
+      "is",
+      1
+    ],
+    [
+      "powerful",
+      1
+    ],
+    [
+      "processing",
+      1
+    ],
+    [
+      "science",
+      1
+    ],
+    [
+      "supports",
+      1
+    ],
+    [
+      "with",
+      1
+    ]
+  ],
+  "9": {
+    "sum": 210,
+    "mean": 10.5
+  },
+  "10": {
+    "sum": 500000500000,
+    "timings": "Chưa đo"
+  },
+  "12": [
+    [
+      "data",
+      4
+    ],
+    [
+      "spark",
+      4
+    ],
+    [
+      "big",
+      3
+    ],
+    [
+      "distributed",
+      2
+    ],
+    [
+      "for",
+      2
+    ],
+    [
+      "is",
+      2
+    ],
+    [
+      "a",
+      1
+    ],
+    [
+      "analysis",
+      1
+    ],
+    [
+      "and",
+      1
+    ],
+    [
+      "apache",
+      1
+    ],
+    [
+      "are",
+      1
+    ],
+    [
+      "computing",
+      1
+    ],
+    [
+      "framework",
+      1
+    ],
+    [
+      "powerful",
+      1
+    ],
+    [
+      "processing",
+      1
+    ],
+    [
+      "python",
+      1
+    ],
+    [
+      "requires",
+      1
+    ],
+    [
+      "supports",
+      1
+    ],
+    [
+      "useful",
+      1
+    ]
+  ],
+  "13": [
+    [
+      "spark",
+      5
+    ],
+    [
+      "and",
+      3
+    ],
+    [
+      "data",
+      3
+    ],
+    [
+      "big",
+      2
+    ],
+    [
+      "distributed",
+      2
+    ],
+    [
+      "is",
+      2
+    ],
+    [
+      "python",
+      2
+    ],
+    [
+      "supports",
+      2
+    ],
+    [
+      "are",
+      1
+    ],
+    [
+      "computing",
+      1
+    ],
+    [
+      "fast",
+      1
+    ],
+    [
+      "for",
+      1
+    ],
+    [
+      "fun",
+      1
+    ],
+    [
+      "hadoop",
+      1
+    ],
+    [
+      "popular",
+      1
+    ],
+    [
+      "processing",
+      1
+    ],
+    [
+      "requires",
+      1
+    ],
+    [
+      "science",
+      1
+    ],
+    [
+      "with",
+      1
+    ]
+  ],
+  "17": {
+    "sum": 114,
+    "mean": 7.6,
+    "max": 10,
+    "min": 5,
+    "at_least_8": 8,
+    "below_5": 0,
+    "rate": 53.333333333333336
+  },
+  "18": {
+    "total": 22,
+    "unique": 13,
+    "words": [
+      "and",
+      "big",
+      "data",
+      "easy",
+      "is",
+      "learn",
+      "powerful",
+      "python",
+      "science",
+      "spark",
+      "supports",
+      "to",
+      "with"
+    ]
+  },
+  "19": [
+    [
+      "Hoa",
+      9.5
+    ],
+    [
+      "Binh",
+      8.5
+    ],
+    [
+      "Chi",
+      8
+    ],
+    [
+      "Lan",
+      8
+    ],
+    [
+      "An",
+      7.5
+    ],
+    [
+      "Dung",
+      6.5
+    ]
+  ],
+  "20": {
+    "sum": 12500002500000,
+    "timings": "Chưa đo, chương trình thực hiện 3 lần"
+  },
+  "21": [
+    [
+      "spark",
+      5
+    ],
+    [
+      "and",
+      3
+    ],
+    [
+      "data",
+      3
+    ],
+    [
+      "big",
+      2
+    ],
+    [
+      "distributed",
+      2
+    ],
+    [
+      "is",
+      2
+    ],
+    [
+      "python",
+      2
+    ],
+    [
+      "supports",
+      2
+    ],
+    [
+      "are",
+      1
+    ],
+    [
+      "computing",
+      1
+    ],
+    [
+      "fast",
+      1
+    ],
+    [
+      "for",
+      1
+    ],
+    [
+      "fun",
+      1
+    ],
+    [
+      "hadoop",
+      1
+    ],
+    [
+      "popular",
+      1
+    ],
+    [
+      "processing",
+      1
+    ],
+    [
+      "requires",
+      1
+    ],
+    [
+      "science",
+      1
+    ],
+    [
+      "with",
+      1
+    ]
+  ],
+  "24": [
+    [
+      "spark",
+      5
+    ],
+    [
+      "and",
+      3
+    ],
+    [
+      "data",
+      3
+    ],
+    [
+      "big",
+      2
+    ],
+    [
+      "distributed",
+      2
+    ],
+    [
+      "is",
+      2
+    ],
+    [
+      "python",
+      2
+    ],
+    [
+      "supports",
+      2
+    ],
+    [
+      "are",
+      1
+    ],
+    [
+      "computing",
+      1
+    ],
+    [
+      "fast",
+      1
+    ],
+    [
+      "for",
+      1
+    ],
+    [
+      "fun",
+      1
+    ],
+    [
+      "hadoop",
+      1
+    ],
+    [
+      "popular",
+      1
+    ],
+    [
+      "processing",
+      1
+    ],
+    [
+      "requires",
+      1
+    ],
+    [
+      "science",
+      1
+    ],
+    [
+      "with",
+      1
+    ]
+  ],
+  "15": {
+    "product": [
+      [
+        "Laptop",
+        45000000
+      ],
+      [
+        "Monitor",
+        9000000
+      ],
+      [
+        "Mouse",
+        3600000
+      ],
+      [
+        "Keyboard",
+        2500000
+      ]
+    ],
+    "category": [
+      [
+        "Electronics",
+        54000000
+      ],
+      [
+        "Accessories",
+        6100000
+      ]
+    ],
+    "total_revenue": 60100000,
+    "total_quantity": 29
+  },
+  "22": {
+    "customer": [
+      [
+        "An",
+        21000000
+      ],
+      [
+        "Dung",
+        15000000
+      ],
+      [
+        "Binh",
+        4000000
+      ],
+      [
+        "Chi",
+        1600000
+      ]
+    ],
+    "product": [
+      [
+        "Laptop",
+        30000000
+      ],
+      [
+        "Monitor",
+        9000000
+      ],
+      [
+        "Mouse",
+        1600000
+      ],
+      [
+        "Keyboard",
+        1000000
+      ]
+    ],
+    "total_revenue": 41600000,
+    "total_quantity": 15
+  },
+  "25": {
+    "input": 125,
+    "invalid": 4,
+    "duplicate": 1,
+    "valid": 120,
+    "total_revenue": 1164000000,
+    "product": {
+      "Laptop": 900000000,
+      "Mouse": 12000000,
+      "Keyboard": 30000000,
+      "Monitor": 180000000,
+      "Headphone": 42000000
+    },
+    "category": {
+      "Electronics": 1080000000,
+      "Accessories": 84000000
+    },
+    "quantity": {
+      "Laptop": 60,
+      "Mouse": 60,
+      "Keyboard": 60,
+      "Monitor": 60,
+      "Headphone": 60
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "mode": "Actual return candidate SQL + isolated browser mutation fixtures; no real POST",
+  "checks": [
+    "one heading and one refresh 1366",
+    "no tables, paging or links before choosing warehouse 1366",
+    "only return candidates API loads 1366",
+    "links retain selected warehouse 1366",
+    "one heading and one refresh 768",
+    "no tables, paging or links before choosing warehouse 768",
+    "only return candidates API loads 768",
+    "links retain selected warehouse 768",
+    "one heading and one refresh 390",
+    "no tables, paging or links before choosing warehouse 390",
+    "only return candidates API loads 390",
+    "links retain selected warehouse 390",
+    "only supplied columns and pagination when needed",
+    "table scroll stays inside card 1366",
+    "table scroll stays inside card 390",
+    "keyword filters server before pagination",
+    "page 2 loads from API",
+    "one modal, matching compound IDs, no order detail permission required",
+    "condition options exactly match DTO",
+    "location required before POST",
+    "damaged goods require notes",
+    "submit and cancel locked while sending",
+    "one POST contains exact DTO and distinct request/order IDs",
+    "success closes, reports and refreshes candidates",
+    "409 shows backend message and refreshes without retry",
+    "cancel after conflict closes cleanly",
+    "error 400 preserves editable form and session",
+    "error 500 preserves editable form and session",
+    "FAILED order and completed request cannot be received",
+    "invalid API shape is a load error, not empty results",
+    "read failure 401 preserves session and offers retry",
+    "read failure 403 preserves session and offers retry",
+    "read failure 500 preserves session and offers retry",
+    "read failure -1 preserves session and offers retry",
+    "changing warehouse resets page and rejects stale list",
+    "warehouse change clears selected request and modal",
+    "new selection has no old location",
+    "refresh control removed on leaving page 0",
+    "refresh control removed on leaving page 1",
+    "refresh control removed on leaving page 2",
+    "remount search listener fires once",
+    "no runtime exceptions"
+  ],
+  "viewports": [
+    {
+      "width": 1366,
+      "pageWidth": 1366,
+      "emptyHeight": 73,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "pageWidth": 768,
+      "emptyHeight": 73,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "emptyHeight": 73,
+      "errors": []
+    }
+  ],
+  "consoleErrors": [],
+  "sqlChecks": [
+    {
+      "warehouseId": 1,
+      "totalItems": 0,
+      "pageSize": 100,
+      "emptySearchPassed": true
+    },
+    {
+      "warehouseId": 2,
+      "totalItems": 0,
+      "pageSize": 100,
+      "emptySearchPassed": true
+    },
+    {
+      "warehouseId": 3,
+      "totalItems": 0,
+      "pageSize": 100,
+      "emptySearchPassed": true
+    },
+    {
+      "warehouseId": 4,
+      "totalItems": 0,
+      "pageSize": 100,
+      "emptySearchPassed": true
+    }
+  ]
+}

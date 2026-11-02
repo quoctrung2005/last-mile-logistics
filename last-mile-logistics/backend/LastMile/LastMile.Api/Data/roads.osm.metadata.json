@@ -1,0 +1,18 @@
+{
+  "source": "https://overpass-api.de/api/interpreter",
+  "query": "[out:xml][timeout:90];way[\"highway\"~\"^(motorway|motorway_link|trunk|trunk_link|primary|primary_link|secondary|secondary_link|tertiary|tertiary_link|residential|unclassified|living_street|service)$\"](10.70,106.56,10.85,106.75)->.roads;(.roads;rel(bw.roads)[\"type\"=\"restriction\"];);(._;>;);out body;",
+  "osmTimestamp": "2026-10-31T03:48:34Z",
+  "bbox": [
+    10.7,
+    106.56,
+    10.85,
+    106.75
+  ],
+  "xmlSha256": "2ae4aa4984b710de15fc244ef8c45b0f02929a131625f5d7446428be68202a77",
+  "gzipSha256": "4fcab8ac2bef56ca35c40dc9d415e516176972460fffd1bba457646b3f85ea8b",
+  "nodes": 256843,
+  "ways": 73780,
+  "relations": 1302,
+  "attribution": "© OpenStreetMap contributors",
+  "license": "https://www.openstreetmap.org/copyright"
+}

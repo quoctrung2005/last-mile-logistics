@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>TVĐ Logistics | Điều phối giao hàng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/vendor/leaflet/leaflet.css">
+  <link href="./assets/css/styles.css?v=20261020-shipper-table-1" rel="stylesheet">
+  <link href="./assets/css/tracking.css?v=20261017-2" rel="stylesheet">
+  <link href="./assets/css/dispatch.css?v=20261029-overdue-customer-1" rel="stylesheet">
+  <link href="./assets/css/dashboard.css?v=20261017-cards-3" rel="stylesheet">
+</head>
+<body>
+  <main id="login-page" class="login-page">
+    <section class="login-intro" aria-label="Giới thiệu TVĐ Logistics">
+      <a class="brand brand-intro" href="#/login" aria-label="TVĐ Logistics">
+        <span class="brand-mark"><i class="bi bi-truck"></i></span>
+        <span>TVĐ Logistics</span>
+      </a>
+      <div class="intro-copy">
+        <p class="eyebrow">ĐIỀU PHỐI GIAO HÀNG CHẶNG CUỐI</p>
+        <h1>Mỗi đơn hàng.<br>Một hành trình rõ ràng.</h1>
+        <p class="intro-description">Gom đơn hợp lý, phân công đúng người và theo dõi tiến độ giao hàng cùng một hệ thống.</p>
+      </div>
+      <div class="route-illustration" aria-label="Minh họa tuyến giao hàng">
+        <svg viewBox="0 0 720 390" role="img" aria-labelledby="route-title">
+          <title id="route-title">Minh họa bản đồ và một tuyến giao hàng</title>
+          <rect width="720" height="390" rx="14" fill="#f1f5f3"/>
+          <path d="M0 68 720 112M0 174 720 225M0 289 720 335M132 0 66 390M304 0 225 390M486 0 405 390M650 0 573 390" fill="none" stroke="#fff" stroke-width="18"/>
+          <path d="M474 0h246v390H550c-63-82-107-185-76-390" fill="#e1ebff"/>
+          <path d="M111 299 248 220 351 220 440 111 602 111 685 91" fill="none" stroke="#ad3d00" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+          <g fill="#ad3d00" stroke="#fff" stroke-width="5">
+            <circle cx="111" cy="299" r="22"/><circle cx="248" cy="220" r="22"/>
+            <circle cx="440" cy="111" r="22"/><circle cx="602" cy="111" r="22"/><circle cx="685" cy="91" r="22"/>
+          </g>
+          <g fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">
+            <text x="111" y="305">K</text><text x="248" y="226">1</text><text x="440" y="117">2</text><text x="602" y="117">3</text><text x="685" y="97">4</text>
+          </g>
+          <g fill="#637287" font-family="Inter, sans-serif" font-size="13" font-weight="600">
+            <text x="170" y="56">TÂN PHÚ</text><text x="480" y="66">TÂN BÌNH</text><text x="530" y="365">PHÚ NHUẬN</text>
+          </g>
+        </svg>
+      </div>
+      <div class="intro-tags" aria-label="Nền tảng">
+        <span>Điều phối Web</span>
+        <span>Shipper Mobile</span>
+      </div>
+    </section>
+    <section class="login-panel">
+      <div class="login-card">
+        <p class="card-eyebrow">CHÀO MỪNG TRỞ LẠI</p>
+        <h2>Đăng nhập hệ thống</h2>
+        <p class="login-lead">Sử dụng tài khoản được bưu cục cấp cho bạn.</p>
+        <div id="login-alert" class="alert alert-danger d-none" role="alert" aria-live="polite"></div>
+        <form id="login-form" novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="username">Tên đăng nhập</label>
+            <input class="form-control" id="username" name="username" autocomplete="username" maxlength="100" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="password">Mật khẩu</label>
+            <div class="password-field">
+              <input class="form-control" id="password" name="password" type="password" autocomplete="current-password" maxlength="72" required>
+              <button class="password-toggle" type="button" id="password-toggle" aria-label="Hiện mật khẩu" aria-pressed="false">
+                <i class="bi bi-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="login-options">
+            <label class="form-check">
+              <input class="form-check-input" id="remember-username" type="checkbox">
+              <span class="form-check-label">Ghi nhớ tên đăng nhập</span>
+            </label>
+            <span class="help-link" title="Liên hệ quản trị bưu cục để được hỗ trợ.">Quên mật khẩu?</span>
+          </div>
+          <button class="btn login-submit" id="login-submit" type="submit">
+            <span class="button-label"><i class="bi bi-arrow-right me-2" aria-hidden="true"></i>Đăng nhập</span>
+            <span class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+          </button>
+        </form>
+        <div class="login-note"><i class="bi bi-check-lg" aria-hidden="true"></i><span>Cần tài khoản? Liên hệ quản trị bưu cục.</span></div>
+        <p class="login-footer">© 2026 TVĐ Logistics · Giao hàng chặng cuối</p>
+      </div>
+    </section>
+  </main>
+
+  <main id="app-shell" class="app-shell d-none">
+    <aside id="sidebar" class="sidebar">
+      <a class="brand brand-sidebar" href="#/dashboard" aria-label="TVĐ Logistics - Tổng quan">
+        <span class="brand-mark"><i class="bi bi-truck"></i></span>
+        <span class="brand-copy"><strong>TVĐ Logistics</strong><small>Điều phối giao hàng</small></span>
+      </a>
+      <div class="sidebar-scroll">
+        <p class="nav-section-label">KHÔNG GIAN LÀM VIỆC</p>
+        <nav id="main-navigation" aria-label="Điều hướng chính"></nav>
+      </div>
+      <div class="sidebar-footer">
+        <div class="sidebar-account">
+          <span class="sidebar-account-avatar" id="sidebar-account-avatar" aria-hidden="true">TV</span>
+          <div class="sidebar-account-copy">
+            <strong id="sidebar-account-name">Tài khoản</strong>
+            <div class="sidebar-account-meta">
+              <small id="sidebar-account-role"></small>
+              <small class="sidebar-account-branch"><i class="bi bi-buildings" aria-hidden="true"></i><span id="branch-label">Đang kết nối</span></small>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-account-actions">
+          <p class="system-status"><span class="session-status-dot" aria-hidden="true"></span><span>Đã đăng nhập</span></p>
+          <button id="sidebar-signout" class="sidebar-signout" type="button">
+            <i class="bi bi-box-arrow-left" aria-hidden="true"></i><span>Đăng xuất</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <section class="workspace">
+      <header class="topbar">
+        <button class="icon-button mobile-menu-button" id="mobile-menu" type="button" aria-label="Mở menu" aria-controls="sidebar" aria-expanded="false">
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+        <div class="branch-select"><span id="header-branch">Bưu cục</span><i class="bi bi-chevron-down" aria-hidden="true"></i><select id="header-branch-selector" aria-label="Phạm vi bưu cục" hidden></select></div>
+        <div class="topbar-spacer"></div>
+        <div class="quick-search">
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <input id="quick-search" type="search" placeholder="Tìm kiếm nhanh..." aria-label="Tìm kiếm nhanh" disabled>
+        </div>
+        <button class="icon-button notification-button" type="button" aria-label="Thông báo">
+          <i class="bi bi-bell" aria-hidden="true"></i>
+        </button>
+        <span class="notification-pill"><i class="bi bi-bell" aria-hidden="true"></i><span>Thông báo</span></span>
+        <div class="profile">
+          <span class="profile-avatar" id="profile-avatar">TV</span>
+          <span class="profile-copy"><strong id="profile-name">Tài khoản</strong><small id="profile-role">Quản lý</small></span>
+        </div>
+        <button class="icon-button signout-button" id="header-signout" type="button" aria-label="Đăng xuất">
+          <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="content-area">
+        <div class="page-heading">
+          <div>
+            <p class="breadcrumb-label" id="page-breadcrumb">TVĐ LOGISTICS / QUẢN LÝ</p>
+            <h1 id="page-title">Tổng quan</h1>
+            <p id="page-description" class="page-description"></p>
+          </div>
+        </div>
+        <section id="page-content" class="page-content" aria-live="polite"></section>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="./js/config.js" defer></script>
+  <script src="./js/vietnam-date.js?v=20261019-license-1" defer></script>
+  <script src="./js/api.js?v=20261019-sql-results-1" defer></script>
+  <script src="./js/write-outcome.js?v=20261019-1" defer></script>
+  <script src="./js/auth.js" defer></script>
+  <script src="./js/router.js?v=20261030-registration" defer></script>
+  <script src="./js/waybill-printer.js" defer></script>
+  <script src="./js/orders.js?v=20261030-pickup-issues" defer></script>
+  <script src="./js/pickup-receipts.js?v=20261030-pickup-condition" defer></script>
+  <script src="./js/pickup-issues.js?v=20261030-workflow" defer></script>
+  <script src="./js/customers.js?v=20261010-1" defer></script>
+  <script src="./js/shippers.js?v=20261019-vehicle-picker-2" defer></script>
+  <script src="./js/vehicles.js?v=20261010-auto-capacity-1" defer></script>
+  <script src="./js/locations.js?v=20261010-admin-1" defer></script>
+  <script src="./js/transactions.js?v=20261009-history-1" defer></script>
+  <script src="./js/warehouse.js?v=20261030-pickup-issues" defer></script>
+  <script src="./js/inbound.js?v=20261019-sql-results-1" defer></script>
+  <script src="./js/accounts.js?v=20261010-accounts-1" defer></script>
+  <script src="./js/admin-ui.js?v=20261010-admin-1" defer></script>
+  <script src="./js/registrations.js?v=20261030-1" defer></script>
+  <script src="./js/roles.js?v=20261010-admin-1" defer></script>
+  <script src="./js/catalogs.js?v=20261010-admin-1" defer></script>
+  <script src="./js/pricing.js?v=20261010-admin-1" defer></script>
+  <script src="./js/audit.js?v=20261010-admin-1" defer></script>
+  <script src="./assets/vendor/chart.umd.min.js" defer></script>
+  <script src="./js/reports.js?v=20261017-compact-2" defer></script>
+  <script src="./assets/vendor/leaflet/leaflet.js" defer></script>
+  <script src="./js/tracking.js?v=20261017-2" defer></script>
+  <script src="./js/dispatch.js?v=20261029-overdue-customer-1" defer></script>
+  <script src="./js/cod.js?v=20261017-2" defer></script>
+  <script src="./js/driver-earnings.js?v=20261031-1" defer></script>
+  <script src="./js/incident-chat.js?v=20261031-1" defer></script>
+  <script src="./js/dashboard.js?v=20261017-cards-3" defer></script>
+  <script src="./js/app.js?v=20261030-registration" defer></script>
+</body>
+</html>

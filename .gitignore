@@ -1,0 +1,46 @@
+# .NET / C#
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+**/*.userosscache
+**/*.suo
+**/artifacts/
+
+# Flutter / Dart
+**/.dart_tool/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/*.iml
+**/.idea/
+**/ios/Pods/
+**/ios/.symlinks/
+**/android/.gradle/
+**/android/local.properties
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/.widget_preview/
+
+# Web / Node
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test artifacts & scratch
+/tmp/
+/.*-check/
+/frontend/tests/.artifacts/
+**/frontend/tests/.artifacts/
+
+# OS / Temporary files
+dump_screen.xml
+emulator_screen.png
+*.log
+.DS_Store
+Thumbs.db

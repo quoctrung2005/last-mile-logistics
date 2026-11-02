@@ -1,0 +1,67 @@
+{
+    "mode":  "Read-only SQL module inspection; JSON configuration with environment override; no application writes",
+    "server":  "(localdb)\\MSSQLLocalDB",
+    "database":  "QLGiaoHangChangCuoi",
+    "modules":  [
+                    {
+                        "name":  "sp_ChuyenTrangThaiDonHang",
+                        "type":  "SQL_STORED_PROCEDURE",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "sp_XacNhanDonHang",
+                        "type":  "SQL_STORED_PROCEDURE",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_ChiTietDonHang_BaoVeDonDaXuLy",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_ChiTietDonHang_DongBoTongKhoiLuong",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_ChiTietGiaoDichKho_KiemTraViTri",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_DiemGiaoNhan_BaoVeDonDaXuLy",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_DiemGiaoNhan_DongBoToaDoDiaLy",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_DonHang_KiemTraTaiTrongSauCapNhatKhoiLuong",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_DonHang_KiemTraToanVenTrangThai",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    },
+                    {
+                        "name":  "TR_DonHang_KiemTraTongKhoiLuong",
+                        "type":  "SQL_TRIGGER",
+                        "setNoCount":  true,
+                        "matchesRepository":  true
+                    }
+                ]
+}

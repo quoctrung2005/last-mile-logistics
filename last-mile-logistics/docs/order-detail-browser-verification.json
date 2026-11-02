@@ -1,0 +1,201 @@
+{
+  "mode": "component QA with exactly two existing SQL orders; auth and API transport are test adapters, no JWT or payload persisted",
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 768,
+      "pageWidth": 1351,
+      "workspace": {
+        "left": 256,
+        "right": 1351,
+        "top": 0,
+        "bottom": 2489.140625,
+        "width": 1095
+      },
+      "header": {
+        "left": 256,
+        "right": 1351,
+        "top": 0,
+        "bottom": 72,
+        "width": 1095
+      },
+      "detail": {
+        "left": 283,
+        "right": 1324,
+        "top": 166.59375,
+        "bottom": 2455.140625,
+        "width": 1041
+      },
+      "sidebarWidth": 256,
+      "columns": "511.5px 511.5px",
+      "detailCount": 1,
+      "h1Count": 0,
+      "feeTranslated": true,
+      "actorFallback": true,
+      "bodyLock": false,
+      "stylesLoaded": "flex",
+      "errors": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "pageWidth": 1905,
+      "workspace": {
+        "left": 256,
+        "right": 1905,
+        "top": 0,
+        "bottom": 2467.453125,
+        "width": 1649
+      },
+      "header": {
+        "left": 256,
+        "right": 1905,
+        "top": 0,
+        "bottom": 72,
+        "width": 1649
+      },
+      "detail": {
+        "left": 367.5,
+        "right": 1793.5,
+        "top": 166.59375,
+        "bottom": 2433.453125,
+        "width": 1426
+      },
+      "sidebarWidth": 256,
+      "columns": "704px 704px",
+      "detailCount": 1,
+      "h1Count": 0,
+      "feeTranslated": true,
+      "actorFallback": true,
+      "bodyLock": false,
+      "stylesLoaded": "flex",
+      "errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "pageWidth": 768,
+      "workspace": {
+        "left": 0,
+        "right": 768,
+        "top": 0,
+        "bottom": 3043.171875,
+        "width": 768
+      },
+      "header": {
+        "left": 0,
+        "right": 768,
+        "top": 0,
+        "bottom": 60,
+        "width": 768
+      },
+      "detail": {
+        "left": 14,
+        "right": 754,
+        "top": 148.1875,
+        "bottom": 3017.171875,
+        "width": 740
+      },
+      "sidebarWidth": 290,
+      "columns": "740px",
+      "detailCount": 1,
+      "h1Count": 0,
+      "feeTranslated": true,
+      "actorFallback": true,
+      "bodyLock": false,
+      "stylesLoaded": "flex",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "workspace": {
+        "left": 0,
+        "right": 390,
+        "top": 0,
+        "bottom": 3388.421875,
+        "width": 390
+      },
+      "header": {
+        "left": 0,
+        "right": 390,
+        "top": 0,
+        "bottom": 60,
+        "width": 390
+      },
+      "detail": {
+        "left": 14,
+        "right": 376,
+        "top": 148.1875,
+        "bottom": 3362.421875,
+        "width": 362
+      },
+      "sidebarWidth": 290,
+      "columns": "362px",
+      "detailCount": 1,
+      "h1Count": 0,
+      "feeTranslated": true,
+      "actorFallback": true,
+      "bodyLock": false,
+      "stylesLoaded": "flex",
+      "errors": []
+    }
+  ],
+  "checks": [
+    "sidebar footer remains visible with expanded menu at 1366",
+    "sticky header stays at viewport top at 1366",
+    "Expanded technical details and long fields do not overflow page at 1366",
+    "sidebar footer remains visible with expanded menu at 1920",
+    "sticky header stays at viewport top at 1920",
+    "Expanded technical details and long fields do not overflow page at 1920",
+    "sidebar accessible and workspace inert at 768",
+    "sidebar footer remains visible with expanded menu at 768",
+    "backdrop closes drawer and releases scrolling at 768",
+    "Escape closes drawer at 768",
+    "sticky header stays at viewport top at 768",
+    "Expanded technical details and long fields do not overflow page at 768",
+    "sidebar accessible and workspace inert at 390",
+    "sidebar footer remains visible with expanded menu at 390",
+    "backdrop closes drawer and releases scrolling at 390",
+    "Escape closes drawer at 390",
+    "sticky header stays at viewport top at 390",
+    "Expanded technical details and long fields do not overflow page at 390",
+    "Refresh fetches detail exactly once",
+    "Overlapping refreshes render only latest response",
+    "Warehouse and Orders use the same single detail renderer",
+    "Warehouse return keeps selected warehouse/page/keyword",
+    "Shared helper from warehouse preserves internal source",
+    "Opening order from transaction detail returns to transaction list",
+    "Actual Orders list detail button routes to order ID 1",
+    "Back/Forward preserve detail and list filters",
+    "Browser reload reopens detail ID 1",
+    "Late response for ID 2 cannot overwrite ID 1",
+    "ID 2 replaces old detail",
+    "Double click on action opens only one dialog",
+    "Closing modal removes dialog and top-layer backdrop",
+    "Route change removes all dialogs/backdrops and body locks",
+    "Shared modal cleanup aborts its signal once and clears ownership",
+    "Route navigation scrolls instantly to top",
+    "Viewer permission exposes only refresh",
+    "Forbidden route retains session adapter",
+    "No error/unhandledrejection/DevTools exception in completed checks"
+  ],
+  "consoleErrors": [],
+  "orders": [
+    {
+      "id": 1,
+      "status": "COMPLETED",
+      "itemCount": 1,
+      "feeCount": 1,
+      "historyCount": 11
+    },
+    {
+      "id": 2,
+      "status": "COMPLETED",
+      "itemCount": 1,
+      "feeCount": 1,
+      "historyCount": 11
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "mode": "Actual detail SQL read + isolated edit contract fixture; no real PUT",
+  "actualOrders": [
+    {
+      "id": 16,
+      "status": "NEW",
+      "requiresAddressSelection": true,
+      "hasVersion": true
+    }
+  ],
+  "checks": [
+    "NEW order with unknown address allows editing",
+    "form cannot save while customer data initializes",
+    "update-only user opens form without quote requiring create permission",
+    "unknown pickup address is not silently replaced by default",
+    "known customer address is selected by its ID",
+    "original delivery snapshot remains visible",
+    "missing address blocks PUT",
+    "edit form fits viewport 1366",
+    "edit form fits viewport 390",
+    "save locks form while sending",
+    "PUT sends complete DTO and exact expectedVersion once",
+    "save returns to correct detail",
+    "matched address automatically preloads exact ID",
+    "409 keeps entered form and blocks duplicate PUT",
+    "409 never auto retries PUT",
+    "completed orders remain uneditable",
+    "missing version still locks edit with a specific reason",
+    "no console errors"
+  ],
+  "consoleErrors": []
+}

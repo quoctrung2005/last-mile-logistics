@@ -1,0 +1,26 @@
+{
+  "phase": "roles",
+  "mode": "Isolated LocalDB schema/seed + real ASP.NET/proxy/Edge; seeded actors use test JWT with independent random signing key.",
+  "checks": [
+    "Read/save roles enforce ADMIN and management grant",
+    "Create/edit, duplicate code, immutable role code and active ADMIN protected",
+    "Permission replacement preserves exact full set, stale expected set conflicts, core admin rights protected",
+    "Browser creates role through real POST",
+    "Browser edits role through real API",
+    "All available permissions rendered exactly once",
+    "Group select-all has indeterminate state",
+    "Cancel leaving preserves unsaved grants",
+    "After save grant remains checked after backend reload",
+    "Cancel resets original grants",
+    "roles viewport 1440",
+    "roles viewport 390",
+    "Role detail reload and permission-restricted route verified",
+    "Custom role navigation uses live grants",
+    "New custom role logs in and uses permitted branch-scoped order screen",
+    "Current JWT session sees updated grants via live permissions API; no claim of access-token revocation",
+    "Permission changes revoke actual refresh token while existing access token still reads updated grants",
+    "No JavaScript errors"
+  ],
+  "errors": [],
+  "operationalWrites": false
+}
