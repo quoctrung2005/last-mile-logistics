@@ -158,6 +158,18 @@
     if (className) node.className = className;
     if (value instanceof Node) {
       node.append(value);
+    } else if (Array.isArray(value)) {
+      for (const item of value) {
+        if (item instanceof Node) {
+          node.append(item);
+        } else if (item !== null && item !== undefined && item !== "") {
+          node.append(document.createTextNode(String(item)));
+        }
+      }
+    } else if (value && typeof value === "object") {
+      if (typeof value.style === "string") {
+        node.style.cssText = value.style;
+      }
     } else if (value !== undefined) {
       node.textContent = text(value);
     }

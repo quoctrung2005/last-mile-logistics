@@ -153,13 +153,24 @@
     const headers = new Headers(settings.headers || {});
     headers.set("Accept", "application/json");
 
-    if (settings.body && !headers.has("Content-Type")) {
-      headers.set("Content-Type", "application/json");
+    let body = settings.body;
+    if (body !== undefined && body !== null) {
+      const isPlainObject = typeof body === "object" &&
+        !(body instanceof FormData) &&
+        !(body instanceof Blob) &&
+        !(body instanceof URLSearchParams) &&
+        !(typeof ArrayBuffer !== "undefined" && body instanceof ArrayBuffer);
+      if (isPlainObject) {
+        body = JSON.stringify(body);
+      }
+      if (!headers.has("Content-Type")) {
+        headers.set("Content-Type", "application/json");
+      }
     }
     headers.delete("Authorization");
     if (sentToken) headers.set("Authorization", "Bearer " + sentToken);
 
-    const { response, data } = await sendRequest(url, settings, headers);
+    const { response, data } = await sendRequest(url, { ...settings, body }, headers);
     if (response.ok && settings.responseType === "blob") return data;
     // Only reads may be replayed after refreshing credentials. Writes always
     // return their first outcome to the caller; the backend has no idempotency contract.

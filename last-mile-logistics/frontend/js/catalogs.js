@@ -24,7 +24,7 @@
           const initLng=Number(f.longitude?.control?.value)||106.7009;
           const hasCoord=!!(f.latitude?.control?.value&&f.longitude?.control?.value);
           const map=window.L.map(box).setView([initLat,initLng],hasCoord?15:12);
-          window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"© OpenStreetMap"}).addTo(map);
+          window.L.tileLayer("https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=vi",{maxZoom:20,subdomains:["0","1","2","3"],attribution:"&copy; Google Maps"}).addTo(map);
           let marker=hasCoord?window.L.marker([initLat,initLng],{draggable:true}).addTo(map):null;
           const updateInputs=(lat,lng)=>{if(f.latitude?.control)f.latitude.control.value=lat.toFixed(6);if(f.longitude?.control)f.longitude.control.value=lng.toFixed(6);};
           const bindDrag=m=>m.on("dragend",ev=>{const pos=ev.target.getLatLng();updateInputs(pos.lat,pos.lng);});

@@ -115,12 +115,12 @@ public class IncidentChatController : ControllerBase
             -- 2. Lấy mã đơn và mã chuyến nếu có
             IF @ResolvedOrderId IS NOT NULL
             BEGIN
-                SELECT @OrderCode = dh.MaDonHangCode FROM dbo.DonHang dh WHERE dh.MaDonHang = @ResolvedOrderId;
+                SELECT @OrderCode = dh.KyHieuDonHang FROM dbo.DonHang dh WHERE dh.MaDonHang = @ResolvedOrderId;
             END;
 
             IF @ResolvedTripId IS NOT NULL
             BEGIN
-                SELECT @TripCode = cg.MaChuyenGiaoCode FROM dbo.ChuyenGiaoHang cg WHERE cg.MaChuyenGiao = @ResolvedTripId;
+                SELECT @TripCode = cg.KyHieuChuyenGiao FROM dbo.ChuyenGiaoHang cg WHERE cg.MaChuyenGiao = @ResolvedTripId;
             END;
 
             SET @Title = CASE
@@ -227,10 +227,9 @@ public class IncidentChatController : ControllerBase
                 SELECT
                     @Role = vt.KyHieuVaiTro,
                     @BranchId = tk.MaBuuCuc,
-                    @SenderName = COALESCE(nv.HoTen, tk.TenDayDu, tk.TenDangNhap, N'Người dùng')
+                    @SenderName = COALESCE(tk.HoTen, tk.TenDangNhap, N'Người dùng')
                 FROM dbo.TaiKhoan tk
                 JOIN dbo.VaiTro vt ON vt.MaVaiTro = tk.MaVaiTro
-                LEFT JOIN dbo.NhanVienGiaoHang nv ON nv.MaTaiKhoan = tk.MaTaiKhoan
                 WHERE tk.MaTaiKhoan = @ActorId
                   AND tk.TrangThaiTaiKhoan = 'ACTIVE'
                   AND vt.DangHoatDong = 1;
@@ -255,9 +254,9 @@ public class IncidentChatController : ControllerBase
                     FROM dbo.CanhBaoGiaoHang cb
                     WHERE cb.MaCanhBao = @ResolvedIncidentId;
 
-                    -- Chuyển cảnh báo sang IN_PROGRESS nếu đang OPEN
+                    -- Chuyển cảnh báo sang ACKNOWLEDGED nếu đang OPEN
                     UPDATE dbo.CanhBaoGiaoHang
-                    SET TrangThaiCanhBao = 'IN_PROGRESS'
+                    SET TrangThaiCanhBao = 'ACKNOWLEDGED'
                     WHERE MaCanhBao = @ResolvedIncidentId
                       AND TrangThaiCanhBao = 'OPEN';
                 END;
@@ -308,7 +307,7 @@ public class IncidentChatController : ControllerBase
                         tk.MaTaiKhoan,
                         'INCIDENT_CHAT',
                         CONCAT(N'Tin nhắn sự cố mới từ ', @SenderName),
-                        @Content,
+                        LEFT(@Content, 1000),
                         'INCIDENT',
                         COALESCE(@ResolvedIncidentId, @NewMessageId),
                         0,
@@ -365,7 +364,7 @@ public class IncidentChatController : ControllerBase
                             @RecipientAccountId,
                             'INCIDENT_CHAT',
                             N'Điều phối viên đã trả lời sự cố',
-                            @Content,
+                            LEFT(@Content, 1000),
                             'INCIDENT',
                             COALESCE(@ResolvedIncidentId, @NewMessageId),
                             0,
@@ -449,9 +448,9 @@ public class IncidentChatController : ControllerBase
                 SELECT
                     cb.MaCanhBao AS incidentId,
                     cb.MaDonHang AS orderId,
-                    dh.MaDonHangCode AS orderCode,
+                    dh.KyHieuDonHang AS orderCode,
                     cb.MaChuyenGiao AS tripId,
-                    cg.MaChuyenGiaoCode AS tripCode,
+                    cg.KyHieuChuyenGiao AS tripCode,
                     cb.LoaiCanhBao AS incidentType,
                     cb.MucDoCanhBao AS severity,
                     cb.TrangThaiCanhBao AS status,
@@ -468,8 +467,8 @@ public class IncidentChatController : ControllerBase
                             WHEN 'DAMAGED_PARCEL' THEN N'Hàng hỏng'
                             ELSE N'Sự cố'
                         END,
-                        CASE WHEN dh.MaDonHangCode IS NOT NULL THEN CONCAT(N' · Đơn ', dh.MaDonHangCode) ELSE N'' END,
-                        CASE WHEN cg.MaChuyenGiaoCode IS NOT NULL THEN CONCAT(N' · Chuyến ', cg.MaChuyenGiaoCode) ELSE N'' END
+                        CASE WHEN dh.KyHieuDonHang IS NOT NULL THEN CONCAT(N' · Đơn ', dh.KyHieuDonHang) ELSE N'' END,
+                        CASE WHEN cg.KyHieuChuyenGiao IS NOT NULL THEN CONCAT(N' · Chuyến ', cg.KyHieuChuyenGiao) ELSE N'' END
                     ) AS title,
                     (
                         SELECT TOP 1 tn.NoiDung
@@ -493,8 +492,8 @@ public class IncidentChatController : ControllerBase
                         SELECT COUNT(1)
                         FROM dbo.TinNhanSuCo tn
                         WHERE tn.MaCanhBao = cb.MaCanhBao
-                          AND tn.MaTaiKhoanGui <> @ActorId
-                          AND tn.DaDoc = 0
+                        AND tn.MaTaiKhoanGui <> @ActorId
+                        AND tn.DaDoc = 0
                     ) AS unreadCount
                 FROM dbo.CanhBaoGiaoHang cb
                 LEFT JOIN dbo.DonHang dh ON dh.MaDonHang = cb.MaDonHang
@@ -514,7 +513,7 @@ public class IncidentChatController : ControllerBase
                     ))
                     -- Nếu là Điều phối / Admin: xem toàn bộ cảnh báo trong bưu cục
                     OR (@Role <> 'SHIPPER' AND (
-                        @BranchId IS NULL OR dh.MaBuuCucHienTai = @BranchId OR cg.MaKhoXuatPhat = @BranchId
+                        @BranchId IS NULL OR dh.MaBuuCuc = @BranchId OR cg.MaBuuCuc = @BranchId
                     ))
                 )
                 ORDER BY cb.ThoiGianPhatHien DESC
@@ -556,10 +555,9 @@ public class IncidentChatController : ControllerBase
 
                 SELECT
                     @Role = vt.KyHieuVaiTro,
-                    @SenderName = COALESCE(nv.HoTen, tk.TenDayDu, tk.TenDangNhap, N'Hệ thống')
+                    @SenderName = COALESCE(tk.HoTen, tk.TenDangNhap, N'Hệ thống')
                 FROM dbo.TaiKhoan tk
                 JOIN dbo.VaiTro vt ON vt.MaVaiTro = tk.MaVaiTro
-                LEFT JOIN dbo.NhanVienGiaoHang nv ON nv.MaTaiKhoan = tk.MaTaiKhoan
                 WHERE tk.MaTaiKhoan = @ActorId
                   AND tk.TrangThaiTaiKhoan = 'ACTIVE';
 

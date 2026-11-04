@@ -1477,7 +1477,16 @@ class _B4MapRouteScreenState extends State<B4MapRouteScreen>
       children: [
         TileLayer(
           tileProvider: widget.tileProvider,
-          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+          urlTemplate:
+              'https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=vi',
+          subdomains: const ['0', '1', '2', '3'],
+          panBuffer: 2,
+          keepBuffer: 4,
+          maxNativeZoom: 19,
+          maxZoom: 20,
+          tileDisplay: const TileDisplay.fadeIn(
+            duration: Duration(milliseconds: 120),
+          ),
           userAgentPackageName: 'com.tvdlogistics.shipper',
         ),
         if (_geometry.length > 1)
@@ -1491,7 +1500,7 @@ class _B4MapRouteScreenState extends State<B4MapRouteScreen>
                     ? _progress!.remainingGeometry
                     : _geometry,
                 strokeWidth: 6,
-                color: AppTheme.primary,
+                color: const Color(0xFF1A73E8),
               ),
             ],
           ),

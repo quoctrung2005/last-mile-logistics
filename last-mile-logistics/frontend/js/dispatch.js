@@ -1,7 +1,7 @@
-﻿"use strict";
+"use strict";
 (function () {
   const U=window.AdminUI,R=window.Router,{el,button}=U,UI=window.LogisticsUI;
-  const storageKey="tvd.dispatch.selection",colors=["#ad3d00","#2563a6","#267052","#7948a4","#a62662"],letters="ABCDEFGHIJKLMNO";
+  const storageKey="tvd.dispatch.selection",colors=["#1a73e8","#059669","#7c3aed","#ea580c","#db2777"],letters="ABCDEFGHIJKLMNO";
   // The solver alone can take 20s; allow data loading, confirmation locks,
   // persistence and response download to finish as well.
   const planningTimeoutMs=60000;
@@ -597,12 +597,16 @@
       if(!s.alive()||!host.isConnected)return;const valid=p=>p&&Number.isFinite(p.latitude)&&Number.isFinite(p.longitude)&&Math.abs(p.latitude)<=90&&Math.abs(p.longitude)<=180;
       const points=routes.flatMap(r=>[...r.stops.map(o=>o.point),...(r.legs||[]).flatMap(l=>l.geometry||[])]).filter(valid);if(valid(depot))points.push(depot);
       if(!points.length||!window.L){host.replaceChildren(el("p","dispatch-empty",!points.length?"Chưa có tọa độ hợp lệ để hiển thị bản đồ.":"Chưa tải được thư viện bản đồ."));return;}
-      const map=s.map=window.L.map(host,{scrollWheelZoom:false});const status=el("p","dispatch-map-status");host.after(status);s.mapStatus=status;
-      window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).on("tileerror",()=>{status.textContent="Chưa tải được nền bản đồ. Các điểm và hình học tuyến được giữ.";}).on("tileload",()=>{status.textContent="";}).addTo(map);
+      const map=s.map=window.L.map(host,{scrollWheelZoom:false,preferCanvas:true});const status=el("p","dispatch-map-status");host.after(status);s.mapStatus=status;
+      const googleRoadmap=window.L.tileLayer("https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=vi",{maxZoom:20,maxNativeZoom:19,keepBuffer:6,updateWhenIdle:false,subdomains:["0","1","2","3"],attribution:'&copy; <a href="https://maps.google.com" target="_blank">Google Maps</a>'});
+      const googleSatellite=window.L.tileLayer("https://mt{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}&hl=vi",{maxZoom:20,maxNativeZoom:19,keepBuffer:6,updateWhenIdle:false,subdomains:["0","1","2","3"],attribution:'&copy; <a href="https://maps.google.com" target="_blank">Google Maps</a>'});
+      const osm=window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
+      googleRoadmap.on("tileerror",()=>{status.textContent="Chưa tải được nền bản đồ. Các điểm và hình học tuyến được giữ.";}).on("tileload",()=>{status.textContent="";}).addTo(map);
+      window.L.control.layers({"Google Bản đồ":googleRoadmap,"Google Vệ tinh":googleSatellite,"OpenStreetMap":osm},null,{position:"topright"}).addTo(map);
       map.fitBounds(points.map(p=>[p.latitude,p.longitude]),{padding:[40,40],maxZoom:16});
       routes.forEach((route,index)=>{
         const color=colors[index%colors.length],opacity=selected==null||selected===index?1:.45;
-        for(const leg of route.legs||[])if(leg.geometry?.length>1)window.L.polyline(leg.geometry.map(p=>[p.latitude,p.longitude]),{color,opacity,weight:selected===index?5:3,dashArray:index%2?"9 5":null}).addTo(map);
+        for(const leg of route.legs||[])if(leg.geometry?.length>1)window.L.polyline(leg.geometry.map(p=>[p.latitude,p.longitude]),{color,opacity,weight:selected===index?6:4,lineJoin:"round",dashArray:index%2?"9 5":null}).addTo(map);
         for(const [i,stop]of route.stops.entries())if(valid(stop.point)){
           const coincident=routes.flatMap(r=>r.stops).filter(o=>valid(o.point)&&o.point.latitude===stop.point.latitude&&o.point.longitude===stop.point.longitude),offset=(coincident.indexOf(stop)-(coincident.length-1)/2)*44;
           const token=el("span","dispatch-map-number",letters[index]+(stop.sequence||i+1));token.style.background=color;const popup=el("div","dispatch-popup");popup.append(el("strong","",routeName(route,index)+" · Điểm "+(stop.sequence||i+1)),el("p","",stop.trackingNumber),el("p","",stop.receiverName),el("p","",stop.address||stop.deliveryAddress));if(stop.arrivalAt)popup.append(el("p","","Đến nơi (giờ VN): "+date(stop.arrivalAt)));if(stop.serviceStartAt)popup.append(el("p","","Bắt đầu giao (giờ VN): "+date(stop.serviceStartAt)),el("p","","Chờ: "+waiting(stop)));if(stop.departureAt)popup.append(el("p","","Rời điểm (giờ VN): "+date(stop.departureAt)));

@@ -70,11 +70,12 @@
   function showCriticalEmergencyAlert(item) {
     let alertHost = document.getElementById("critical-emergency-alert-bar");
     if (!alertHost) {
-      alertHost = el("div", "position-fixed top-0 start-50 translate-middle-x mt-3 z-3");
+      alertHost = el("div", "position-fixed start-50 translate-middle-x");
       alertHost.id = "critical-emergency-alert-bar";
       alertHost.style.zIndex = "99999";
       alertHost.style.maxWidth = "600px";
       alertHost.style.width = "90%";
+      alertHost.style.top = "80px"; // Đặt dưới thanh topbar (72px) để hiển thị đầy đủ
       document.body.append(alertHost);
     }
 
@@ -90,16 +91,23 @@
 
     const btnActions = el("div", "d-flex gap-2 align-items-center");
     const viewBtn = button("Xử lý ngay", () => {
-      toast.remove();
+      alertHost.remove();
       if (active) selectIncident(active, item.incidentId);
       else window.Router.navigate(window.Router.href("incident-chat", {}, { incidentId: item.incidentId }));
     }, "btn btn-danger btn-sm");
-    const closeBtn = button("✕", () => toast.remove(), "btn btn-outline-secondary btn-sm");
+    const closeBtn = button("✕", () => alertHost.remove(), "btn btn-outline-secondary btn-sm");
 
     btnActions.append(viewBtn, closeBtn);
     toast.append(content, btnActions);
     alertHost.replaceChildren(toast);
     playEmergencyBeep();
+
+    setTimeout(() => {
+      const current = document.getElementById("critical-emergency-alert-bar");
+      if (current && current.contains(toast)) {
+        current.remove();
+      }
+    }, 10000);
   }
 
   window.EmergencyIncidentAlert = { playEmergencyBeep, showCriticalEmergencyAlert };
@@ -120,6 +128,8 @@
       destroy() {
         this.destroyed = true;
         if (this.timer) clearInterval(this.timer);
+        const alertHost = document.getElementById("critical-emergency-alert-bar");
+        if (alertHost) alertHost.remove();
       }
     };
     active = state;
@@ -356,7 +366,7 @@
 
       const currentMsgs = state.chatThread?.messages || [];
       const existingIds = new Set(currentMsgs.map(m => m.id));
-      const brandNew = updated.messages.filter(m => !existingIds.contains(m.id));
+      const brandNew = updated.messages.filter(m => !existingIds.has(m.id));
 
       if (brandNew.length > 0) {
         state.chatThread.messages = [...currentMsgs, ...brandNew];
@@ -390,7 +400,8 @@
       const isMe = msg.isMe; // Admin/Dispatcher gửi
       const wrapper = el("div", "d-flex mb-3 " + (isMe ? "justify-content-end" : "justify-content-start"));
 
-      const bubble = el("div", "p-3 rounded-3 shadow-sm", { style: "max-width: 75%;" });
+      const bubble = el("div", "p-3 rounded-3 shadow-sm");
+      bubble.style.maxWidth = "75%";
       if (isMe) {
         bubble.className += " bg-primary text-white";
       } else {
@@ -423,10 +434,10 @@
     try {
       const newMsg = await window.ApiClient.request("/api/v1/incidents/chat", {
         method: "POST",
-        body: {
+        body: JSON.stringify({
           incidentId: state.selectedIncidentId,
           content: text
-        }
+        })
       });
 
       textarea.value = "";
@@ -451,10 +462,10 @@
     try {
       await window.ApiClient.request("/api/v1/incidents/resolve", {
         method: "POST",
-        body: {
+        body: JSON.stringify({
           incidentId,
           resolutionNote: note
-        }
+        })
       });
       alert("Đã đánh dấu sự cố giải quyết thành công!");
       await loadConversations(state);
